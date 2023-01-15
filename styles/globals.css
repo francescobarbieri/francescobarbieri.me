@@ -1,0 +1,65 @@
+:root {
+  --background-light: #fefefe;
+  --background-dark: rgb(45, 45, 45);
+
+  --main-text-light: rgba(0, 0, 0, .87);
+  --main-text-dark: #e7e8eb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--background-dark);
+    --main-text: var(--main-text-dark);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: var(--background-light);
+    --main-text: var(--main-text-light);
+  }
+}
+
+[color-scheme="dark"] {
+  --background: var(--background-dark);
+  --main-text: var(--main-text-dark);
+}
+
+[color-scheme="light"] {
+  --background: var(--background-light);
+  --main-text: var(--main-text-light);
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  font-size: 1em;
+  font-display: swap;
+  color: var(--main-text);
+  -webkit-font-smoothing: "auto";
+}
+
+h1 {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+
+p {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+
+.date {
+  
+}
+
+/* Custom classes */
+
+.wrapper {
+  width: calc(100% - 2rem);
+  height: fit-content;
+  padding: 0 1rem 0 1rem;
+}
