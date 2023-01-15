@@ -23,15 +23,16 @@ html, body {
 h1 {
   margin-block-end: 0;
   margin-block-start: 0;
+  font-weight: 600;
+}
+
+h4 {
+  font-weight: 600;
 }
 
 p {
   margin-block-end: 0;
   margin-block-start: 0;
-}
-
-.date {
-  
 }
 
 /* Custom classes */
