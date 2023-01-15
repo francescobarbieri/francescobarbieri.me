@@ -1,33 +1,11 @@
 :root {
-  --background-light: #fefefe;
-  --background-dark: rgb(45, 45, 45);
-
-  --main-text-light: rgba(0, 0, 0, .87);
-  --main-text-dark: #e7e8eb;
+  --background: #fefefe;
+  --main-text: rgba(0, 0, 0, .87);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--background-dark);
-    --main-text: var(--main-text-dark);
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: var(--background-light);
-    --main-text: var(--main-text-light);
-  }
-}
-
-[color-scheme="dark"] {
-  --background: var(--background-dark);
-  --main-text: var(--main-text-dark);
-}
-
-[color-scheme="light"] {
-  --background: var(--background-light);
-  --main-text: var(--main-text-light);
+[data-theme='dark'] {
+  --background: rgb(45, 45, 45);
+  --main-text: #e7e8eb;
 }
 
 html, body {
