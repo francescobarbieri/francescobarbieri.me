@@ -13,10 +13,12 @@ export default function Home() {
         <title>Francesco Barbieri</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className='wrapper'>
-        <Navbar />
-        <p>Homepage</p>
-      </div>
+      <center>
+        <div className='wrapper'>
+          <Navbar />
+          <p>Homepage</p>
+        </div>
+      </center>
     </>
   )
 }

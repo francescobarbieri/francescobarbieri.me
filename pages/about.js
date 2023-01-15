@@ -13,10 +13,12 @@ export default function About() {
           <title>Francesco Barbieri</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <main className='wrapper'>
+        <center>
+          <main className='wrapper'>
             <Navbar />
             <p>About</p>
-        </main>
+          </main>
+        </center>
       </>
     )
   }
