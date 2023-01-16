@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import ArticlesCollection from '../components/ArticlesCollection';
 import Navbar from '../components/Navbar';
 
 export default function Home() {
@@ -16,7 +17,7 @@ export default function Home() {
       <center>
         <div className='wrapper'>
           <Navbar />
-          <p>Archive</p>
+          <ArticlesCollection />
         </div>
       </center>
     </>

@@ -3,10 +3,10 @@ import styles from '../styles/Article.module.css';
 import Link from "next/link";
 import {robotoSlab} from '../components/fonts';
 
-const Article = ({articleData}) => {
+const Article = ({articleData, style}) => {
 
     return (
-        <article className={styles.article}>
+        <article className={[styles.article, style].join(" ")}>
             <Link href="">
                 <img src={articleData.mainImg} className={styles.img} />
             </Link>

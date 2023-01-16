@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import ArticlesCollection from '../components/ArticlesCollection';
 import Footer from '../components/Footer';
+import LatestArticles from '../components/LatestArticles';
 import Navbar from '../components/Navbar';
 
 export default function Home() {
@@ -18,10 +19,7 @@ export default function Home() {
       <center>
         <div className='wrapper'>
           <Navbar />
-          <p>Homepage</p>
-          <br />
-          <ArticlesCollection />
-          <br />
+          <LatestArticles />
           <Footer />
         </div>
       </center>
