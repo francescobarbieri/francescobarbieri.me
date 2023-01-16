@@ -6,12 +6,22 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 20rem;
+}
+
+.img {
+    width: 100%;
+    border-radius: 12px;
+    background-color: #dbdbdb;
+    border: none;
+    object-fit: cover;
 }
 
 .articleHeader {
     display: flex;
     gap: 1rem;
     align-items: center;
+    margin-top: 0.9rem;
 }
 
 .link {
