@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Article from '../components/Article';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 
@@ -18,6 +19,9 @@ export default function Home() {
         <div className='wrapper'>
           <Navbar />
           <p>Homepage</p>
+          <br />
+          <Article />
+          <br />
           <Footer />
         </div>
       </center>

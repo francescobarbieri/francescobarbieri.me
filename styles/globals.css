@@ -1,11 +1,19 @@
 :root {
   --background: #fefefe;
   --main-text: rgba(0, 0, 0, .87);
+
+  --tag-text: #0071E3;
+  --tag-bg: rgba(0, 113, 227, 0.21);
+  --date-text: rgba(0, 0, 0, .33);
 }
 
 [data-theme='dark'] {
   --background: rgb(45, 45, 45);
   --main-text: #e7e8eb;
+
+  --tag-text: rgb(156, 195, 219);
+  --tag-bg: rgb(62, 74, 82);
+  --date-text: #7D848D;
 }
 
 html, body {
@@ -15,9 +23,7 @@ html, body {
   padding: 0;
   background-color: var(--background);
   font-size: 1em;
-  font-display: swap;
   color: var(--main-text);
-  -webkit-font-smoothing: "auto";
 }
 
 h1 {

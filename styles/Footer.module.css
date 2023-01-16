@@ -3,6 +3,8 @@
     flex-wrap: wrap;
     align-items: flex-start;
     text-align: left;
+    font-size: 0.9375rem;
+    padding-bottom: 3rem;
 }
 
 .footerHeader {
@@ -16,6 +18,7 @@
 .footer a {
     text-decoration: none;
     color: var(--main-text);
+    line-height: 1.8rem;
 }
 
 @media screen and (min-width: 640px) {
