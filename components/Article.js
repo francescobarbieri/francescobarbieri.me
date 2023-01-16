@@ -23,7 +23,7 @@ const Article = ({articleData}) => {
                     </Link>
                     <p className={styles.preview}>{articleData.preview}</p>
                 </div>
-                <Link href="">
+                <Link href="" className={styles.link}>
                     <button className={styles.button}>
                         Read more
                     </button>

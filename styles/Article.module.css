@@ -27,6 +27,8 @@
 .link {
     text-decoration: none;
     color: inherit;
+    display: block;
+    width: fit-content;
 }
 
 .tag {
