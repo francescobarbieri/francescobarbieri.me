@@ -26,6 +26,7 @@ const Article = ({articleData, style}) => {
                 <Link href="" className={styles.link}>
                     <button className={styles.button}>
                         Read more
+                        <img className={styles.buttonImg} src="images/arrowRight.svg"/>
                     </button>
                 </Link>
             </div>

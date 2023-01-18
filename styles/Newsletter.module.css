@@ -73,3 +73,48 @@
     cursor: pointer;
     overflow: hidden;
 }
+
+.button:hover {
+    background-color: #1187FF;
+}
+
+@media screen and (min-width: 980px) {
+    .newsletter {
+        margin-left: -0.9375rem;
+        margin-right: -0.9375rem;
+        width: calc(100% + 1.2rem);
+    }
+
+    .newsletterContent {
+        padding: 3.8rem;
+    }
+
+    .slogan {
+        width: fit-content;
+        margin-block-end: .7rem;
+    }
+
+    .input {
+        max-width: calc(24.6875rem - 1.5rem);
+    }
+
+    .buttonsContainer {
+        max-width: 24.6875rem;
+    }
+
+    .img {
+        top: 50%;
+        right: 6rem;
+        transform: translate(0, -50%);
+        height: 16.8125rem;
+        width: 16.8125rem;
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .newsletter {
+        margin-right: -3.8rem;
+        margin-left: -3.8rem;
+        width: calc(100% + 7.6rem);
+    }
+}

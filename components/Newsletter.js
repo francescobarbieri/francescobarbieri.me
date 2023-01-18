@@ -10,7 +10,7 @@ const Newsletter = () => {
     return (
         <div className={styles.newsletter}>
             <div className={styles.newsletterContent}>
-                <img className={styles.img} src=""/>
+                <img className={styles.img} src="/images/newsletterIcon.svg"/>
                 <p className={[styles.slogan, robotoSlab.className].join(" ")}>Big ideas, once a week.</p>
                 <p className={styles.subslogan}>Sign up for the newsletter so you don't miss a thing! It's free 😉</p>
                 <form className={styles.form}>

@@ -79,6 +79,17 @@
     overflow: hidden;
 }
 
+.button:hover {
+    background-color: #1187FF;
+}
+
+.buttonImg {
+    margin-bottom: -0.11rem;
+    margin-left: 0.25rem;
+    height: 0.875rem;
+    width: 0.875rem;
+}
+
 .preview {
     font-size: 0.9687rem;
     overflow: hidden;
