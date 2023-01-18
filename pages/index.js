@@ -3,6 +3,7 @@ import ArticlesCollection from '../components/ArticlesCollection';
 import Footer from '../components/Footer';
 import LatestArticles from '../components/LatestArticles';
 import Navbar from '../components/Navbar';
+import Newsletter from '../components/Newsletter';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <div className='wrapper'>
           <Navbar />
           <LatestArticles />
+          <Newsletter />
           <Footer />
         </div>
       </center>

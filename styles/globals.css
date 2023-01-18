@@ -5,6 +5,9 @@
   --tag-text: #0071E3;
   --tag-bg: rgba(0, 113, 227, 0.21);
   --date-text: rgba(0, 0, 0, .33);
+
+  --newsletter-bg: #212932;
+  --newsletter-text: #e7e8eb;
 }
 
 [data-theme='dark'] {
@@ -14,6 +17,9 @@
   --tag-text: rgb(156, 195, 219);
   --tag-bg: rgb(62, 74, 82);
   --date-text: #7D848D;
+
+  --newsletter-bg: #dadee0;
+  --newsletter-text: rgba(0,0,0, .87);
 }
 
 html, body {
@@ -34,6 +40,7 @@ h1 {
 
 h4 {
   font-weight: 600;
+  margin-block-start: 0;
 }
 
 p {
