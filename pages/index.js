@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import ArticlesCollection from '../components/ArticlesCollection';
 import Footer from '../components/Footer';
 import LatestArticles from '../components/LatestArticles';
 import Navbar from '../components/Navbar';

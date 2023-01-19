@@ -2,7 +2,7 @@
     .articlesCollection {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-column-gap: 1rem;
+        grid-column-gap: 1.7rem;
         grid-row-gap: 3.5rem;
     }    
 }
