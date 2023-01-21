@@ -7,7 +7,7 @@ const Article = ({articleData, style}) => {
 
     return (
         <article className={[styles.article, style].join(" ")}>
-            <Link href="">
+            <Link href=''>
                 <img src={articleData.mainImg} className={styles.img} />
             </Link>
             <div className={styles.articleContent}>
