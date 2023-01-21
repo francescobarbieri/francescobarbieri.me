@@ -6,7 +6,7 @@ const TagSelector = ({setTag, currentTag, tags}) => {
     return (
         <div className={styles.tagWrapper}>
             <p className={[styles.sectiontitle, robotoSlab.className].join(" ")}>Filter articles by tag</p>
-            <div>
+            <div className={styles.tagContainer}>
                 <p className={styles.tag} onClick={() => setTag('All')}>All</p>
                 { tags ? tags.map( () => {
 

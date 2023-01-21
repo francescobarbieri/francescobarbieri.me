@@ -1,6 +1,16 @@
 .tagWrapper {
     text-align: left;
 }
+
+.tagContainer {
+    margin-bottom: 4rem;
+}
+
+.tagContainer {
+    display: flex;
+    gap: 1rem;
+}
+
 .sectiontitle {
     font-size: 1.6875rem;
     margin-block-start: 0;

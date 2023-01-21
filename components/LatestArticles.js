@@ -1,8 +1,11 @@
 import styles from '../styles/LatestArticles.module.css';
 import Article from './Article';
 
-const LatestArticles = () => {
+const LatestArticles = ({articles}) => {
 
+    console.log(articles)
+
+    /*
     const articles = [
         {
             id: "articleID",
@@ -38,17 +41,18 @@ const LatestArticles = () => {
             mainImg: "https://firebasestorage.googleapis.com/v0/b/francescobarbieri-73605.appspot.com/o/maxresdefault.jpg?alt=media"
         },
     
-    ]    
+    ]
+    */
 
     return (
         <div className={styles.latestGrid}>
-            {
+            {/*
                 articles.map( article => (
                     <Article key={article.id} articleData={article} style={styles.article}/>
                 ))
-            }
+            */}
         </div>
     );
 }
- 
+
 export default LatestArticles;

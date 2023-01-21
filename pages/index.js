@@ -3,8 +3,14 @@ import Footer from '../components/Footer';
 import LatestArticles from '../components/LatestArticles';
 import Navbar from '../components/Navbar';
 import Newsletter from '../components/Newsletter';
+import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
+import { format } from 'date-fns';
+import { db } from '../components/firebase';
 
-export default function Home() {
+export default function Home(props) {
+
+  const { output } = props
+
   return (
     <>
       <Head>
@@ -19,11 +25,39 @@ export default function Home() {
       <center>
         <div className='wrapper'>
           <Navbar />
-          <LatestArticles />
+          <LatestArticles articles={output} />
           <Newsletter />
           <Footer />
         </div>
       </center>
     </>
   )
+}
+
+export async function getServerSideProps () {
+
+  try {
+      const q = query(collection(db, 'articles'), orderBy("date", "desc"), limit(4));
+      const querySnapshot = await getDocs(q);
+  
+      let output = [];
+  
+      querySnapshot.docs.map( doc => {
+        output.push(
+              {
+                  id: doc.id,
+                  date: format(doc.data().date.toDate() , 'MMMM d, yyyy'),
+                  tag: doc.data().tag,
+                  title: doc.data().title,
+                  preview: doc.data().preview,
+                  mainImg: doc.data().mainImg
+              }
+          )
+      })
+
+      return { props: {output}}
+  } catch(e) {
+      return { props: e}
+  }
+
 }

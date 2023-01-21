@@ -28,6 +28,7 @@ const Footer = () => {
                 <a href="mailto:fbarbieri.business@gmail.com" target="_blank">Email</a><br/>
                 <a href="https://github.com/francescobarbieri" target="_blank">GitHub</a><br/>
                 <a href="https://www.linkedin.com/in/barbieri-francesco/" target="_blank">LinkedIn</a><br/>
+                <a href="https://twitter.com/fraaabarbieri" target="_blank">Twitter</a><br/>
                 <a href="https://instagram.com/fraabarbieri/" target="_blank">Instagram</a><br/>
             </div>
         </footer>
