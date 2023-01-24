@@ -5,4 +5,10 @@
         grid-column-gap: 1.7rem;
         grid-row-gap: 3.5rem;
     }    
+
+    .paginationContainer {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+    }
 }
