@@ -14,6 +14,15 @@ export default function Home(props) {
   // change this name
   const { output } = props;
 
+  function getTags () {
+    var temp = [];
+    output.map( article => {
+      if(!temp.includes(article.tag))
+        temp.push(article.tag)
+    })
+    return (temp);
+  }
+
   const [selectedTag, setSelectedTag] = useState();
 
   return (
@@ -30,7 +39,7 @@ export default function Home(props) {
       <center>
         <div className='wrapper'>
           <Navbar />
-          <TagSelector setTag={setSelectedTag}/>
+          <TagSelector setTag={setSelectedTag} tags={getTags()}/>
           <ArticlesCollection pages={true} articles={output} currentTag={selectedTag}/>
           <Newsletter />
           <Footer />
