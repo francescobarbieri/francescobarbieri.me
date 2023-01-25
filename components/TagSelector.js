@@ -13,7 +13,6 @@ const TagSelector = ({setTag, currentTag, tags}) => {
                 }) : ''              
                 }
             </div>
-            <p className={[styles.sectiontitle, robotoSlab.className].join(" ")}>{currentTag} articles</p>
         </div>
     );
 }

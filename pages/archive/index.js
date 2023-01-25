@@ -30,8 +30,8 @@ export default function Home(props) {
       <center>
         <div className='wrapper'>
           <Navbar />
-          <TagSelector setTag={setSelectedTag} currentTag={selectedTag}/>
-          <ArticlesCollection pages={true} articles={output} />
+          <TagSelector setTag={setSelectedTag}/>
+          <ArticlesCollection pages={true} articles={output} currentTag={selectedTag}/>
           <Newsletter />
           <Footer />
         </div>

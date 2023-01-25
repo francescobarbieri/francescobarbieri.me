@@ -2,42 +2,71 @@ import Article from "./Article";
 import styles from "../styles/ArticlesCollection.module.css";
 import { Pagination } from "@mui/material";
 import { useState } from "react";
+import { robotoSlab } from "./fonts";
 
-const ArticlesCollection = ({articles, pages}) => {
+const ArticlesCollection = (props) => {
+    const {articles} = props;
+    const {pages} = props;
+    const {currentTag} = props;
+
     const [page, setPage] = useState(1);
 
     const changePage = (event, value) => {
         setPage(value);
     }
 
-    if(pages)
-    {
-        const currentPage = 1;
-        const pagesNumber = Math.ceil(Object.keys(articles).length / 12);
+    // const currentPage = 1;
+    // const pagesNumber = Math.ceil(Object.keys(articles).length / 12);
 
-        return (
-            <div className={styles.paginationContainer}>
-                <Pagination
-                    count={pagesNumber}
-                    variant="outlined"
-                    shape="rounded"
-                    page={page}
-                    onChange={changePage}
-                />
-            </div>
-        )
+    /*
+    {
+        articles.map( article => (
+            <Article key={article.id} articleData={article} />
+        ))
     }
-    else {
-        return (
+    <Pagination
+        count={pagesNumber}
+        variant="outlined"
+        shape="rounded"
+        page={page}
+        onChange={changePage}
+    />
+    */
+
+    return (
+        <>
+            <Header currentTag={currentTag}/>
             <div className={styles.articlesCollection}>
                 {
-                    articles.map( article => (
-                        <Article key={article.id} articleData={article} />
-                    ))
+                    articles.map( article => {
+                        if(!currentTag || currentTag === 'All')
+                        {
+                            return (<Article key={article.id} articleData={article} />)
+                        }
+                        else if (article.tag === currentTag)
+                        {
+                            return (<Article key={article.id} articleData={article} />)
+                        }
+                    })
                 }
             </div>
-        );
-    }
+        </>
+    );
 }
  
 export default ArticlesCollection;
+
+const Header = ({currentTag}) => {
+    if(currentTag)
+    {
+        return (
+        <p className={[styles.sectiontitle, robotoSlab.className].join(" ")}>{currentTag} articles</p>
+        )
+    }
+    else
+    {
+        return (
+        <p className={[styles.sectiontitle, robotoSlab.className].join(" ")}>All articles</p>
+        )
+    }
+}
