@@ -1,5 +1,7 @@
-import Head from 'next/head'
-import Navbar from '../components/Navbar'
+import Head from 'next/head';
+import Navbar from '../components/Navbar';
+import SectionTitle from '../components/SectionTitle';
+import { robotoSlab } from '../components/fonts';
 
 export default function About() {
   return (
@@ -16,7 +18,18 @@ export default function About() {
       <center>
         <main className='wrapper'>
           <Navbar />
-          <p>About</p>
+          <section>
+            <SectionTitle
+              title="About me"
+              icon="about"
+            />
+            <h3 className={robotoSlab.className}>More info about me</h3>
+            <SectionTitle
+              title="Recommended readings"
+              icon="readings"
+            />
+            <p>This list was updated in <b>February 2023.</b></p>
+          </section>
         </main>
       </center>
     </>
