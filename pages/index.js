@@ -5,6 +5,8 @@ import Newsletter from '../components/Newsletter';
 import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
 import { format } from 'date-fns';
 import { db } from '../components/firebase';
+import SectionTitle from '../components/SectionTitle';
+import ArticlesCollection from '../components/ArticlesCollection';
 
 export default function Home(props) {
 
@@ -24,6 +26,13 @@ export default function Home(props) {
       <center>
         <div className='wrapper'>
           <Navbar />
+          <SectionTitle
+            title="Latest articles"
+            icon="latest"
+          />
+
+          <ArticlesCollection articles={output}/>
+
           <Newsletter />
           <Footer />
         </div>
@@ -36,7 +45,7 @@ export default function Home(props) {
 export async function getServerSideProps () {
 
   try {
-      const q = query(collection(db, 'articles'), orderBy("date", "desc"), limit(4));
+      const q = query(collection(db, 'articles'), orderBy("date", "desc"), limit(3));
       const querySnapshot = await getDocs(q);
   
       let output = [];

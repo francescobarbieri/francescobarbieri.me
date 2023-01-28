@@ -1,0 +1,13 @@
+.articlesContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.425rem;
+}
+
+@media screen and (min-width: 980px) {
+    .articlesContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.625rem;
+    }
+  }

@@ -7,13 +7,10 @@ const Article = ({articleData, style}) => {
 
     return (
         <article className={[styles.article, style].join(" ")}>
-            <Link href=''>
-                <img src={articleData.mainImg} className={styles.img} />
-            </Link>
             <div className={styles.articleContent}>
                 <div>
                     <div className={styles.articleHeader}>
-                        <Link href={'/archive?tag=' + articleData.tag.toLowerCase()} className={styles.link}>
+                        <Link href={''} className={styles.link}>
                             <p className={styles.tag}>{articleData.tag}</p>
                         </Link>
                         <p className={styles.date}>{articleData.date}</p>
