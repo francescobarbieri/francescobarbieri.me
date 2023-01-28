@@ -1,32 +1,35 @@
 import styles from '../styles/Newsletter.module.css';
-import {robotoSlab} from '../components/fonts';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import { useState } from 'react';
+import SectionTitle from './SectionTitle';
 
 const Newsletter = () => {
-    const [terms, setTerms] = useState(true);
 
     return (
         <div className={styles.newsletter}>
-            <div className={styles.newsletterContent}>
-                <img className={styles.img} src="/images/newsletterIcon.svg"/>
-                <p className={[styles.slogan, robotoSlab.className].join(" ")}>Big ideas, once a week.</p>
-                <p className={styles.subslogan}>Sign up for the newsletter so you don't miss a thing! It's free 😉</p>
-                <form className={styles.form}>
-                    <label className={styles.label}>Your e-mail</label><br/>
-                    <input className={styles.input} type="email" placeholder="Write your e-mail here" />
-                    <div className={styles.buttonsContainer}>
-                        <FormControlLabel control={
-                                <Checkbox sx={{color: "rgb(83, 90, 96)"}} defaultChecked onChange={() => setTerms(!terms)}/>
-                            }
-                            label="Agree to terms"
-                            disableTypography={true}
-                        />
-                        <button className={styles.button}>Subscribe</button>
-                    </div>
-                </form>
-            </div>
+            <SectionTitle
+                title="Newsletter"
+                icon="newsletter"
+            />
+            <p className={styles.newsletterSlogan}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <form className={styles.form}>
+                <div className={styles.inputContainer}>
+                    <input
+                        type="email"
+                        placeholder='Email address'
+                        className={styles.emailInput}
+                    />
+                    <svg className={styles.inputIcon} aria-hidden="true" width="18" height="18" viewBox="0 0 18 18">
+                        <path d="m1 6 8 5 8-5V4L9 9 1 4c0-1.1.9-2 2-2h12c1.09 0 2 .91 2 2v10c0 1.09-.91 2-2 2H3c-1.09 0-2-.91-2-2V6Z"></path>
+                    </svg>
+                </div>
+                <button
+                    type='submit'
+                    className={styles.submitButton}
+                >
+                    Subscribe
+                </button>
+            </form>
         </div>
     );
 }
