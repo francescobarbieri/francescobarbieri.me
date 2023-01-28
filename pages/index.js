@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Footer from '../components/Footer';
-import LatestArticles from '../components/LatestArticles';
 import Navbar from '../components/Navbar';
 import Newsletter from '../components/Newsletter';
 import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
@@ -25,7 +24,6 @@ export default function Home(props) {
       <center>
         <div className='wrapper'>
           <Navbar />
-          <LatestArticles articles={output} />
           <Newsletter />
           <Footer />
         </div>

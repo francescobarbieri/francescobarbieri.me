@@ -1,19 +1,27 @@
 import Head from 'next/head';
-import ArticlesCollection from '../../components/ArticlesCollection';
 import Navbar from '../../components/Navbar';
-import TagSelector from '../../components/TagSelector';
 import { useState } from 'react';
 import Newsletter from '../../components/Newsletter';
 import Footer from '../../components/Footer';
 import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
 import { format } from 'date-fns';
 import { db } from '../../components/firebase';
+import { useRouter } from 'next/router';
 
 export default function Home(props) {
   
   // change this name
   const { output } = props;
+  const router = useRouter();
 
+  const [selectedTag, setSelectedTag] = useState( () => {
+    if(router.query["tag"])
+      return router.query["tag"];
+    else
+      return 'All';
+  });
+  
+  // extract tags from all articles object
   function getTags () {
     var temp = [];
     output.map( article => {
@@ -22,8 +30,6 @@ export default function Home(props) {
     })
     return (temp);
   }
-
-  const [selectedTag, setSelectedTag] = useState();
 
   return (
     <>
@@ -39,8 +45,6 @@ export default function Home(props) {
       <center>
         <div className='wrapper'>
           <Navbar />
-          <TagSelector setTag={setSelectedTag} tags={getTags()}/>
-          <ArticlesCollection pages={true} articles={output} currentTag={selectedTag}/>
           <Newsletter />
           <Footer />
         </div>

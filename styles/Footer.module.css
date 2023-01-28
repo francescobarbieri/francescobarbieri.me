@@ -1,37 +1,28 @@
 .footer {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    text-align: left;
-    font-size: 0.9375rem;
-    padding-bottom: 3rem;
-    margin-top: 4rem;
-}
-
-.footerHeader {
     width: 100%;
+    margin-bottom: 3.3125rem;
+    text-align: left;
 }
 
-.footerList {
-    width: 50%;
+.copyright {
+    font-size: 0.8125rem;
+    color: rgba(0,0,0, .66);
 }
 
-.footer a {
-    text-decoration: none;
-    color: var(--main-text);
-    line-height: 1.8rem;
+.contactsContainer {
+    margin-bottom: calc(6.875rem - 1.4375rem);
 }
 
-@media screen and (min-width: 640px) {
-    .footer {
-        justify-content: space-between;
-    }
+.contactsRow {
+    display: flex;
+    margin-bottom: 1.4375rem;
+}
 
-    .footerHeader {
-        width: 20rem;
-    }
+.contactsRow a {
+    font-size: 1.0625rem;
+    color: rgba(0,0,0, .87);
+}
 
-    .footerList {
-        width: 8rem;
-    }
+.contactsIcon {
+    padding: 0 0.625rem 0 0.625rem;
 }
