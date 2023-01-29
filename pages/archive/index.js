@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 import SectionTitle from "../../components/SectionTitle";
 import ArticlesCollection from "../../components/ArticlesCollection";
 import SelectTag from "../../components/SelectTag";
+import { Pagination } from "@mui/material";
 
 export default function Home(props) {
     // change this name
@@ -20,6 +21,12 @@ export default function Home(props) {
         if (router.query["tag"]) return router.query["tag"];
         else return "All";
     });
+
+    const [page, setPage] = useState(1);
+
+    function pageChange(event, value) {
+        setPage(value);
+    }
 
     return (
         <>
@@ -46,6 +53,7 @@ export default function Home(props) {
                             tags={getTags(output)}
                             handle={setCurrentTag}
                             tag={currentTag}
+                            pageHandler={setPage}
                         />
                     </section>
                     <section>
@@ -54,9 +62,30 @@ export default function Home(props) {
                             icon="archiveArticles"
                         />
                         <ArticlesCollection
-                            articles={output.filter(
-                                (item) => item.tag == currentTag
-                            )}
+                            articles={output
+                                .filter((item) => {
+                                    if (currentTag == "All") return true;
+                                    else if (currentTag == item.tag)
+                                        return true;
+                                    else return false;
+                                })
+                                .slice(
+                                    Math.max(0, (page - 1) * 10),
+                                    page * 10 -1
+                                )}
+                        />
+                        <br />
+                        <Pagination
+                            count={Math.ceil(output.filter((item) => {
+                                if (currentTag == "All") return true;
+                                else if (currentTag == item.tag)
+                                    return true;
+                                else return false;
+                            }).length % 9)}
+                            page={page}
+                            onChange={pageChange}
+                            variant="outlined"
+                            shape="rounded"
                         />
                     </section>
                     <Newsletter />
@@ -83,7 +112,6 @@ export async function getServerSideProps() {
                 tag: doc.data().tag,
                 title: doc.data().title,
                 preview: doc.data().preview,
-                mainImg: doc.data().mainImg,
             });
         });
 

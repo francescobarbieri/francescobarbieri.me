@@ -62,7 +62,6 @@ export async function getServerSideProps() {
                 tag: doc.data().tag,
                 title: doc.data().title,
                 preview: doc.data().preview,
-                mainImg: doc.data().mainImg,
             });
         });
 
