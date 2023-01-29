@@ -10,7 +10,7 @@ const Article = ({articleData, style}) => {
             <div className={styles.articleContent}>
                 <div>
                     <div className={styles.articleHeader}>
-                        <Link href={''} className={styles.link}>
+                        <Link href={'/archive?tag='+ articleData.tag} className={styles.link}>
                             <p className={styles.tag}>{articleData.tag}</p>
                         </Link>
                         <p className={styles.date}>{articleData.date}</p>
