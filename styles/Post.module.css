@@ -1,6 +1,7 @@
 .postGrid {
     display: grid;
     grid-template-columns: 1fr;
+    width: 100%;
 }
 
 .header {
@@ -45,22 +46,31 @@
 }
 
 .body {
-    grid-column: 2 / 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
     text-align: left;
     font-size: 1.2187rem;
     margin-top: 2rem;
     line-height: 1.75rem;
+    position: relative;
+}
+
+.body p {
+    margin-block-end: .8rem;
+    margin-block-start: .8rem;
 }
 
 .body img {
     border-radius: 4px;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
 }
 
 .hr {
     border-bottom: 1px solid gray;
-    grid-column: 1 / 4;
+    grid-column-start: 1;
+    grid-column-end: 4;
     margin-top: 2rem;
 }
 
@@ -68,6 +78,7 @@
     .postGrid {
         display: grid;
         grid-template-columns: 0.17fr 1fr 0.17fr;
+        width: 100%;
     }
     
     .header {
@@ -75,9 +86,6 @@
         grid-template-columns: 0.17fr 1fr 0.17fr;   
         grid-area: 1 / 1 / 1 / 4;
     }
-}
-
-@media screen and (min-width: 980px) {
     .icon {
         display: block;
     }
