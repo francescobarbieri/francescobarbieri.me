@@ -81,7 +81,7 @@ export default function Home(props) {
                                 else if (currentTag == item.tag)
                                     return true;
                                 else return false;
-                            }).length % 9)}
+                            }).length / 9)}
                             page={page}
                             onChange={pageChange}
                             variant="outlined"

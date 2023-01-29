@@ -15,12 +15,12 @@ const Article = ({articleData, style}) => {
                         </Link>
                         <p className={styles.date}>{articleData.date}</p>
                     </div>
-                    <Link href="" className={styles.titleLink}>
+                    <Link href={"/archive/" + articleData.id} className={styles.titleLink}>
                         <h2 className={[styles.title, robotoSlab.className].join(" ")}>{articleData.title}</h2>
                     </Link>
                     <p className={styles.preview}>{articleData.preview}</p>
                 </div>
-                <Link href="" className={styles.link}>
+                <Link href={"/archive/" + articleData.id} className={styles.link}>
                     <button className={styles.button}>
                         Read more
                         <svg className={styles.buttonImg} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">

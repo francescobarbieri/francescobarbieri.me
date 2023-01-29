@@ -4,19 +4,25 @@ import Footer from "../../components/Footer";
 import styles from "../../styles/Post.module.css";
 import Link from "next/link";
 import { robotoSlab } from "../../components/fonts";
+import { collection, getDocs, query, getDoc, doc } from "firebase/firestore";
+import { db } from "../../components/firebase";
+import { marked } from "marked";
+import axios from "axios";
+import format from "date-fns/format";
+import parse from 'html-react-parser';
 
-const Post = () => {
+const Post = ({ postData }) => {
+    
     return (
         <>
             <Head>
-                <title>Post Page</title>
+                <title>{postData.title} - Francesco Barbieri's Blog</title>
             </Head>
             <center>
                 <div className="wrapper">
                     <Navbar />
                     <section>
                         <div className={styles.postGrid}>
-
                             <div className={styles.header}>
                                 <svg className={styles.icon}
                                     aria-hidden="true"
@@ -33,32 +39,23 @@ const Post = () => {
                                 <div className={styles.headerContent}>
                                     <div className={styles.articleHeader}>
                                         <Link
-                                            href={"/archive?tag="}
+                                            href={"/archive?tag=" + postData.tag}
                                             className={styles.link}
                                         >
                                             <p className={styles.tag}>
-                                                General
+                                                {postData.tag}
                                             </p>
                                         </Link>
                                         <p className={styles.date}>
-                                            Datozza
+                                            {postData.date}
                                         </p>
                                     </div>
-                                    <h2 className={robotoSlab.className}>Lorem ipsum dolor sit amet elit, sed do eiusmod tempor incididunt! eiusmod tempor incididunt!</h2>
+                                    <h2 className={robotoSlab.className}>{postData.title}</h2>
                                 </div>
                             </div>
                             <div className={styles.hr}/>
                             <div className={styles.body}>
-                                <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </p>
-                                <img src="https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg?w=1060" />
-                                <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </p>
-                                <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </p>
+                                {parse(postData.body)}
                             </div>
                             <div className={styles.hr}/>
                             
@@ -70,5 +67,52 @@ const Post = () => {
         </>
     );
 };
+
+export async function getStaticPaths() {
+    var output = []
+    const q = query(collection(db, "articles"));
+    const querySnapshot = await getDocs(q);
+
+    querySnapshot.docs.map((doc) => {
+        output.push({
+            params: {
+                id: doc.id
+            }
+        })
+    })
+
+    return {
+        paths: output,
+        fallback: false, // check if it's right
+    }
+}
+
+export async function getStaticProps({ params }) {
+    var output = [];
+    var md = '';
+    const id = params.id;
+    const docRef = doc(db, "articles", id);
+    const docSnap = await getDoc(docRef);
+
+    await axios.get(docSnap.data().doc).then((res) => {
+        md = res.data
+    })
+
+    const html = marked.parse(md);
+
+    const postData = {
+        title: docSnap.data().title,
+        tag: docSnap.data().tag,
+        date: format(docSnap.data().date.toDate(), "MMMM d, yyyy"),
+        body: html,
+    };
+
+    return {
+        props: {
+            postData
+    }}
+}
+
+
 
 export default Post;
