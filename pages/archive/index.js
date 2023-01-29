@@ -71,17 +71,19 @@ export default function Home(props) {
                                 })
                                 .slice(
                                     Math.max(0, (page - 1) * 10),
-                                    page * 10 -1
+                                    page * 10 - 1
                                 )}
                         />
                         <br />
                         <Pagination
-                            count={Math.ceil(output.filter((item) => {
-                                if (currentTag == "All") return true;
-                                else if (currentTag == item.tag)
-                                    return true;
-                                else return false;
-                            }).length / 9)}
+                            count={Math.ceil(
+                                output.filter((item) => {
+                                    if (currentTag == "All") return true;
+                                    else if (currentTag == item.tag)
+                                        return true;
+                                    else return false;
+                                }).length / 9
+                            )}
                             page={page}
                             onChange={pageChange}
                             variant="outlined"

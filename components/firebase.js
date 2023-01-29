@@ -1,5 +1,5 @@
-import firebase from 'firebase/compat/app';
-import { getFirestore } from 'firebase/firestore';
+import firebase from "firebase/compat/app";
+import { getFirestore } from "firebase/firestore";
 
 const app = firebase.initializeApp({
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -8,7 +8,7 @@ const app = firebase.initializeApp({
     storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
     messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
     appId: process.env.REACT_APP_FIREBASE_APP_ID,
-    measurementId: process.env.REACT_APP_FIREBASE_MEASURAMENTS_ID
+    measurementId: process.env.REACT_APP_FIREBASE_MEASURAMENTS_ID,
 });
 
 export const db = getFirestore(app);

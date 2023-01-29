@@ -9,10 +9,9 @@ import { db } from "../../components/firebase";
 import { marked } from "marked";
 import axios from "axios";
 import format from "date-fns/format";
-import parse from 'html-react-parser';
+import parse from "html-react-parser";
 
 const Post = ({ postData }) => {
-    
     return (
         <>
             <Head>
@@ -24,7 +23,8 @@ const Post = ({ postData }) => {
                     <section>
                         <div className={styles.postGrid}>
                             <div className={styles.header}>
-                                <svg className={styles.icon}
+                                <svg
+                                    className={styles.icon}
                                     aria-hidden="true"
                                     width="64"
                                     height="64"
@@ -39,7 +39,9 @@ const Post = ({ postData }) => {
                                 <div className={styles.headerContent}>
                                     <div className={styles.articleHeader}>
                                         <Link
-                                            href={"/archive?tag=" + postData.tag}
+                                            href={
+                                                "/archive?tag=" + postData.tag
+                                            }
                                             className={styles.link}
                                         >
                                             <p className={styles.tag}>
@@ -50,15 +52,16 @@ const Post = ({ postData }) => {
                                             {postData.date}
                                         </p>
                                     </div>
-                                    <h2 className={robotoSlab.className}>{postData.title}</h2>
+                                    <h2 className={robotoSlab.className}>
+                                        {postData.title}
+                                    </h2>
                                 </div>
                             </div>
-                            <div className={styles.hr}/>
+                            <div className={styles.hr} />
                             <div className={styles.body}>
                                 {parse(postData.body)}
                             </div>
-                            <div className={styles.hr}/>
-                            
+                            <div className={styles.hr} />
                         </div>
                     </section>
                     <Footer />
@@ -69,34 +72,34 @@ const Post = ({ postData }) => {
 };
 
 export async function getStaticPaths() {
-    var output = []
+    var output = [];
     const q = query(collection(db, "articles"));
     const querySnapshot = await getDocs(q);
 
     querySnapshot.docs.map((doc) => {
         output.push({
             params: {
-                id: doc.id
-            }
-        })
-    })
+                id: doc.id,
+            },
+        });
+    });
 
     return {
         paths: output,
         fallback: false, // check if it's right
-    }
+    };
 }
 
 export async function getStaticProps({ params }) {
     var output = [];
-    var md = '';
+    var md = "";
     const id = params.id;
     const docRef = doc(db, "articles", id);
     const docSnap = await getDoc(docRef);
 
     await axios.get(docSnap.data().doc).then((res) => {
-        md = res.data
-    })
+        md = res.data;
+    });
 
     const html = marked.parse(md);
 
@@ -109,10 +112,9 @@ export async function getStaticProps({ params }) {
 
     return {
         props: {
-            postData
-    }}
+            postData,
+        },
+    };
 }
-
-
 
 export default Post;
