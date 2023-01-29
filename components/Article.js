@@ -23,7 +23,9 @@ const Article = ({articleData, style}) => {
                 <Link href="" className={styles.link}>
                     <button className={styles.button}>
                         Read more
-                        <img className={styles.buttonImg} src="images/arrowRight.svg"/>
+                        <svg className={styles.buttonImg} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                            <path d="M6.41 2 5 3.41 10.59 9 5 14.59 6.41 16l7-7-7-7Z" fill="#0071E3"></path>
+                        </svg>
                     </button>
                 </Link>
             </div>

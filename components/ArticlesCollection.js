@@ -7,7 +7,7 @@ const ArticlesCollection = ({articles}) => {
         <div className={styles.articlesContainer}>
             {
                 articles.map((article) => (
-                    <Article articleData={article} />
+                    <Article articleData={article} key={article.id} />
                 ))
             }
         </div>

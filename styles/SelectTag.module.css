@@ -1,0 +1,21 @@
+.tagContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.tag {
+    height: 2rem;
+    width: 5.75rem;
+    background-color: rgba(0, 113, 227, 0.21);
+    color: #0071E3;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9375rem;
+}
+
+.selected {
+    background-color: #0071E3;
+    color: #fff;
+}

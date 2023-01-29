@@ -59,12 +59,17 @@ p {
   margin-block-start: 0;
 }
 
+section {
+  margin-bottom: 5.3125rem;
+}
+
 /* Custom classes */
 
 .wrapper {
   width: calc(100% - 2rem);
   height: fit-content;
   padding: 0 1rem 0 1rem;
+  position: relative;
 }
 
 @media screen and (min-width: 640px) {
