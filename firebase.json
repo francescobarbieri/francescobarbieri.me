@@ -10,13 +10,5 @@
         "firebase-debug.*.log"
       ]
     }
-  ],
-  "hosting": {
-    "source": ".",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
-  }
+  ]
 }

@@ -11,8 +11,6 @@ import { Pagination } from "@mui/material";
 import { getSortedPostsData } from "../../components/posts";
 
 export default function Home(props) {
-
-    // change this name
     const { allPostData } = props;
     const router = useRouter();
 
@@ -97,8 +95,6 @@ export default function Home(props) {
     );
 }
 
-// Gestire potenziali errori da questa funzione
-// Get data from Firebase Firestore
 export async function getStaticProps() {
     const allPostData = getSortedPostsData();
     return {
@@ -108,7 +104,7 @@ export async function getStaticProps() {
     };
 }
 
-// Extract unique tags from articles object
+// Extract unique tags from object
 function getTags(allPostData) {
     var temp = [];
     allPostData.map((article) => {

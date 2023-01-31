@@ -1,18 +1,18 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { marked } from 'marked';
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { marked } from "marked";
 
-const postDirectory = path.join(process.cwd(), 'posts');
+const postDirectory = path.join(process.cwd(), "posts");
 
 export function getSortedPostsData() {
     const fileNames = fs.readdirSync(postDirectory);
 
-    const allPostsData = fileNames.map(filename => {
-        const id = encodeURI(filename.replace(/\.md$/, ''));
-        
+    const allPostsData = fileNames.map((filename) => {
+        const id = encodeURI(filename.replace(/\.md$/, ""));
+
         const fullPath = path.join(postDirectory, filename);
-        const fileContents = fs.readFileSync(fullPath, 'utf8');
+        const fileContents = fs.readFileSync(fullPath, "utf8");
 
         const matterResult = matter(fileContents);
 
@@ -20,10 +20,10 @@ export function getSortedPostsData() {
             id,
             ...matterResult.data,
         };
-    })
+    });
 
-    return allPostsData.sort((a,b) => {
-        if(a.date < b.date) {
+    return allPostsData.sort((a, b) => {
+        if (a.date < b.date) {
             return 1;
         } else {
             return -1;
@@ -37,7 +37,7 @@ export function getAllPostIds() {
     return fileNames.map((filename) => {
         return {
             params: {
-                id: encodeURI(filename.replace(/\.md$/, '')),
+                id: encodeURI(filename.replace(/\.md$/, "")),
             },
         };
     });
@@ -46,7 +46,7 @@ export function getAllPostIds() {
 export function getPostData(id) {
     const decodedId = decodeURI(id);
     const fullPath = path.join(postDirectory, `${decodedId}.md`);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const fileContents = fs.readFileSync(fullPath, "utf8");
 
     const matterResult = matter(fileContents);
 
@@ -57,5 +57,5 @@ export function getPostData(id) {
         id,
         contentHtml,
         ...matterResult.data,
-    }
+    };
 }

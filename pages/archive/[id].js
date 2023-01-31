@@ -47,7 +47,10 @@ const Post = ({ postData }) => {
                                             </p>
                                         </Link>
                                         <p className={styles.date}>
-                                            {format(Date.parse(postData.date), 'MMMM d, yyy')}
+                                            {format(
+                                                Date.parse(postData.date),
+                                                "MMMM d, yyy"
+                                            )}
                                         </p>
                                     </div>
                                     <h2 className={robotoSlab.className}>

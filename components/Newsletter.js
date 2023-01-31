@@ -2,7 +2,7 @@ import styles from "../styles/Newsletter.module.css";
 import SectionTitle from "./SectionTitle";
 import { useRef, createRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import axios from "axios";
+import axios from 'axios';
 
 const Newsletter = () => {
     const emailRef = useRef();
@@ -17,7 +17,10 @@ const Newsletter = () => {
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua.
                 </p>
-                <form className={styles.form} onSubmit={(e) => formSubmit(e, emailRef, recaptchaRef)}>
+                <form
+                    className={styles.form}
+                    onSubmit={(e) => formSubmit(e, emailRef, recaptchaRef)}
+                >
                     <div className={styles.inputContainer}>
                         <input
                             type="email"
@@ -68,6 +71,15 @@ const Newsletter = () => {
 
 async function formSubmit(e, emailRef, recaptchaRef) {
     e.preventDefault();
+
+    axios.get("https://us-central1-francescobarbieri-73605.cloudfunctions.net/checkRecaptcha")
+    .then((res) => {
+        console.log(res);
+    })
+
+    console.log('Ciao')
+    console.log(emailRef)
+    console.log(recaptchaRef)
 }
 
 export default Newsletter;
