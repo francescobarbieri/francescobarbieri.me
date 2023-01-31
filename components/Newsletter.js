@@ -73,7 +73,7 @@ async function formSubmit(e, emailRef, recaptchaRef) {
     e.preventDefault();
 
     axios.post("https://europe-west3-francescobarbieri-73605.cloudfunctions.net/checkRecaptcha", {
-        email: emailRef,
+        email: emailRef.current,
         token: recaptchaRef,
     })
     .then((res) => {
