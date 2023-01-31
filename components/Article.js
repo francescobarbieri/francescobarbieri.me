@@ -5,6 +5,7 @@ import { robotoSlab } from "../components/fonts";
 import format from "date-fns/format";
 
 const Article = ({ articleData, style }) => {
+
     return (
         <article className={[styles.article, style].join(" ")}>
             <div className={styles.articleContent}>

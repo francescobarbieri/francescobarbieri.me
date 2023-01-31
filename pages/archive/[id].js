@@ -4,14 +4,12 @@ import Footer from "../../components/Footer";
 import styles from "../../styles/Post.module.css";
 import Link from "next/link";
 import { robotoSlab } from "../../components/fonts";
-import { collection, getDocs, query, getDoc, doc } from "firebase/firestore";
-import { db } from "../../components/firebase";
-import { marked } from "marked";
-import axios from "axios";
 import format from "date-fns/format";
-import parse from "html-react-parser";
+import { getAllPostIds, getPostData } from "../../components/posts";
 
 const Post = ({ postData }) => {
+    console.log(postData);
+
     return (
         <>
             <Head>
@@ -49,7 +47,7 @@ const Post = ({ postData }) => {
                                             </p>
                                         </Link>
                                         <p className={styles.date}>
-                                            {postData.date}
+                                            {format(Date.parse(postData.date), 'MMMM d, yyy')}
                                         </p>
                                     </div>
                                     <h2 className={robotoSlab.className}>
@@ -58,9 +56,12 @@ const Post = ({ postData }) => {
                                 </div>
                             </div>
                             <div className={styles.hr} />
-                            <div className={styles.body}>
-                                {parse(postData.body)}
-                            </div>
+                            <div
+                                className={styles.body}
+                                dangerouslySetInnerHTML={{
+                                    __html: postData.contentHtml,
+                                }}
+                            />
                             <div className={styles.hr} />
                         </div>
                     </section>
@@ -72,44 +73,15 @@ const Post = ({ postData }) => {
 };
 
 export async function getStaticPaths() {
-    var output = [];
-    const q = query(collection(db, "articles"));
-    const querySnapshot = await getDocs(q);
-
-    querySnapshot.docs.map((doc) => {
-        output.push({
-            params: {
-                id: doc.id,
-            },
-        });
-    });
-
+    const paths = getAllPostIds();
     return {
-        paths: output,
-        fallback: false, // check if it's right
+        paths,
+        fallback: false,
     };
 }
 
 export async function getStaticProps({ params }) {
-    var output = [];
-    var md = "";
-    const id = params.id;
-    const docRef = doc(db, "articles", id);
-    const docSnap = await getDoc(docRef);
-
-    await axios.get(docSnap.data().doc).then((res) => {
-        md = res.data;
-    });
-
-    const html = marked.parse(md);
-
-    const postData = {
-        title: docSnap.data().title,
-        tag: docSnap.data().tag,
-        date: format(docSnap.data().date.toDate(), "MMMM d, yyyy"),
-        body: html,
-    };
-
+    const postData = getPostData(params.id);
     return {
         props: {
             postData,

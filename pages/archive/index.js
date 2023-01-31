@@ -3,9 +3,6 @@ import Navbar from "../../components/Navbar";
 import { useState } from "react";
 import Newsletter from "../../components/Newsletter";
 import Footer from "../../components/Footer";
-import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
-import { format } from "date-fns";
-import { db } from "../../components/firebase";
 import { useRouter } from "next/router";
 import SectionTitle from "../../components/SectionTitle";
 import ArticlesCollection from "../../components/ArticlesCollection";
@@ -15,9 +12,8 @@ import { getSortedPostsData } from "../../components/posts";
 
 export default function Home(props) {
 
-
     // change this name
-    const { output } = props;
+    const { allPostData } = props;
     const router = useRouter();
 
     const [currentTag, setCurrentTag] = useState(() => {
@@ -53,7 +49,7 @@ export default function Home(props) {
                     <section>
                         <SectionTitle title="Filter by tag" icon="search" />
                         <SelectTag
-                            tags={getTags(output)}
+                            tags={getTags(allPostData)}
                             handle={setCurrentTag}
                             tag={currentTag}
                             pageHandler={setPage}
@@ -65,7 +61,7 @@ export default function Home(props) {
                             icon="archiveArticles"
                         />
                         <ArticlesCollection
-                            articles={output
+                            articles={allPostData
                                 .filter((item) => {
                                     if (currentTag == "All") return true;
                                     else if (currentTag == item.tag)
@@ -80,7 +76,7 @@ export default function Home(props) {
                         <br />
                         <Pagination
                             count={Math.ceil(
-                                output.filter((item) => {
+                                allPostData.filter((item) => {
                                     if (currentTag == "All") return true;
                                     else if (currentTag == item.tag)
                                         return true;
@@ -103,33 +99,19 @@ export default function Home(props) {
 
 // Gestire potenziali errori da questa funzione
 // Get data from Firebase Firestore
-export async function getServerSideProps() {
-    try {
-        const q = query(collection(db, "articles"), orderBy("date", "desc"));
-        const querySnapshot = await getDocs(q);
-
-        let output = [];
-
-        querySnapshot.docs.map((doc) => {
-            output.push({
-                id: doc.id,
-                date: format(doc.data().date.toDate(), "MMMM d, yyyy"),
-                tag: doc.data().tag,
-                title: doc.data().title,
-                preview: doc.data().preview,
-            });
-        });
-
-        return { props: { output } };
-    } catch (e) {
-        return { props: {} };
-    }
+export async function getStaticProps() {
+    const allPostData = getSortedPostsData();
+    return {
+        props: {
+            allPostData,
+        },
+    };
 }
 
 // Extract unique tags from articles object
-function getTags(output) {
+function getTags(allPostData) {
     var temp = [];
-    output.map((article) => {
+    allPostData.map((article) => {
         if (!temp.includes(article.tag)) temp.push(article.tag);
     });
     return temp;
