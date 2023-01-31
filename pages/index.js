@@ -7,9 +7,13 @@ import { format } from "date-fns";
 import { db } from "../components/firebase";
 import SectionTitle from "../components/SectionTitle";
 import ArticlesCollection from "../components/ArticlesCollection";
+import { useEffect, useState } from "react";
+import { getSortedPostsData } from "../components/posts";
 
 export default function Home(props) {
-    const { output } = props;
+    const { allRecentPostsData } = props;
+
+    console.log(allRecentPostsData)
 
     return (
         <>
@@ -33,7 +37,7 @@ export default function Home(props) {
                     <Navbar />
                     <section>
                         <SectionTitle title="Latest articles" icon="latest" />
-                        <ArticlesCollection articles={output} />
+                        <ArticlesCollection articles={allRecentPostsData} />
                     </section>
                     <Newsletter />
                     <Footer />
@@ -43,30 +47,11 @@ export default function Home(props) {
     );
 }
 
-// Gestire potenziali errori da questa funzione
-export async function getServerSideProps() {
-    try {
-        const q = query(
-            collection(db, "articles"),
-            orderBy("date", "desc"),
-            limit(3)
-        );
-        const querySnapshot = await getDocs(q);
-
-        let output = [];
-
-        querySnapshot.docs.map((doc) => {
-            output.push({
-                id: doc.id,
-                date: format(doc.data().date.toDate(), "MMMM d, yyyy"),
-                tag: doc.data().tag,
-                title: doc.data().title,
-                preview: doc.data().preview,
-            });
-        });
-
-        return { props: { output } };
-    } catch (e) {
-        return { props: e };
-    }
+export async function getStaticProps() {
+    const allRecentPostsData = getSortedPostsData().slice(0,3);
+    return {
+        props: {
+            allRecentPostsData,
+        },
+    };
 }

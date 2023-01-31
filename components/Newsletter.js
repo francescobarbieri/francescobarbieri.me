@@ -1,7 +1,13 @@
 import styles from "../styles/Newsletter.module.css";
 import SectionTitle from "./SectionTitle";
+import { useRef, createRef } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import axios from "axios";
 
 const Newsletter = () => {
+    const emailRef = useRef();
+    const recaptchaRef = createRef();
+
     return (
         <section>
             <div className={styles.newsletter}>
@@ -11,12 +17,13 @@ const Newsletter = () => {
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua.
                 </p>
-                <form className={styles.form}>
+                <form className={styles.form} onSubmit={(e) => formSubmit(e, emailRef, recaptchaRef)}>
                     <div className={styles.inputContainer}>
                         <input
                             type="email"
                             placeholder="Email address"
                             className={styles.emailInput}
+                            ref={emailRef}
                         />
                         <svg
                             className={styles.inputIcon}
@@ -31,6 +38,11 @@ const Newsletter = () => {
                     <button type="submit" className={styles.submitButton}>
                         Subscribe
                     </button>
+                    <ReCAPTCHA
+                        ref={recaptchaRef}
+                        size="invisible"
+                        sitekey="6Lfpo_QjAAAAAON2uiE5fryrz_dqmr0IR26DwJeP"
+                    />
                 </form>
                 <svg
                     className={styles.image}
@@ -53,5 +65,9 @@ const Newsletter = () => {
         </section>
     );
 };
+
+async function formSubmit(e, emailRef, recaptchaRef) {
+    e.preventDefault();
+}
 
 export default Newsletter;

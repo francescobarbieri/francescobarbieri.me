@@ -11,8 +11,11 @@ import SectionTitle from "../../components/SectionTitle";
 import ArticlesCollection from "../../components/ArticlesCollection";
 import SelectTag from "../../components/SelectTag";
 import { Pagination } from "@mui/material";
+import { getSortedPostsData } from "../../components/posts";
 
 export default function Home(props) {
+
+
     // change this name
     const { output } = props;
     const router = useRouter();

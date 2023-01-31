@@ -1,0 +1,174 @@
+[debug] [2023-01-30T17:02:04.578Z] ----------------------------------------------------------------------
+[debug] [2023-01-30T17:02:04.580Z] Command:       /usr/local/bin/firebase /Users/francesco/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2023-01-30T17:02:04.580Z] CLI Version:   11.15.0
+[debug] [2023-01-30T17:02:04.580Z] Platform:      darwin
+[debug] [2023-01-30T17:02:04.580Z] Node Version:  v16.16.0
+[debug] [2023-01-30T17:02:04.582Z] Time:          Mon Jan 30 2023 18:02:04 GMT+0100 (GMT+01:00)
+[debug] [2023-01-30T17:02:04.582Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-30T17:02:04.692Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-30T17:02:04.693Z] > authorizing via signed-in user (fbarbieri.business@gmail.com)
+[debug] [2023-01-30T17:02:04.693Z] [iam] checking project francescobarbieri-73605 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-01-30T17:02:04.696Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/francescobarbieri-73605:testIamPermissions [none]
+[debug] [2023-01-30T17:02:04.697Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/francescobarbieri-73605:testIamPermissions x-goog-quota-user=projects/francescobarbieri-73605
+[debug] [2023-01-30T17:02:04.697Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/francescobarbieri-73605:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-01-30T17:02:05.513Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/francescobarbieri-73605:testIamPermissions 200
+[debug] [2023-01-30T17:02:05.516Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/francescobarbieri-73605:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-01-30T17:02:05.517Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/francescobarbieri-73605/serviceAccounts/francescobarbieri-73605@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-01-30T17:02:05.519Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/francescobarbieri-73605/serviceAccounts/francescobarbieri-73605@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-01-30T17:02:06.784Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/francescobarbieri-73605/serviceAccounts/francescobarbieri-73605@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-01-30T17:02:06.786Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/francescobarbieri-73605/serviceAccounts/francescobarbieri-73605@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-01-30T17:02:06.788Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605 [none]
+[debug] [2023-01-30T17:02:07.072Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605 200
+[debug] [2023-01-30T17:02:07.075Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605 {"projectId":"francescobarbieri-73605","projectNumber":"349921029341","displayName":"francescobarbieri","name":"projects/francescobarbieri-73605","resources":{"hostingSite":"francescobarbieri-73605","storageBucket":"francescobarbieri-73605.appspot.com","locationId":"europe-west3"},"state":"ACTIVE","etag":"1_822d581a-4467-487f-8b9b-398222c9c662"}
+[debug] [2023-01-30T17:02:09.486Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites pageToken=&pageSize=10
+[debug] [2023-01-30T17:02:10.550Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites 200
+[debug] [2023-01-30T17:02:10.552Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites {"sites":[{"name":"projects/francescobarbieri-73605/sites/francescobarbieri-73605","defaultUrl":"https://francescobarbieri-73605.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-01-30T17:02:10.553Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites 
+[debug] [2023-01-30T17:02:11.531Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites 200
+[debug] [2023-01-30T17:02:11.531Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites {"sites":[{"name":"projects/francescobarbieri-73605/sites/francescobarbieri-73605","defaultUrl":"https://francescobarbieri-73605.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-01-30T17:02:11.532Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605/webApps/-/config [none]
+[debug] [2023-01-30T17:02:12.526Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605/webApps/-/config 200
+[debug] [2023-01-30T17:02:12.527Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605/webApps/-/config {"projectId":"francescobarbieri-73605","appId":"1:349921029341:web:2a4e8277e8f6cefaa13f34","storageBucket":"francescobarbieri-73605.appspot.com","locationId":"europe-west3","apiKey":"AIzaSyAXONjVwtIXH_3tnFwN4lDwhxlzZpyVxSc","authDomain":"francescobarbieri-73605.firebaseapp.com","messagingSenderId":"349921029341","measurementId":"G-346GLLMGV4"}
+[debug] [2023-01-30T17:02:39.537Z] Error: Export encountered errors on following paths:
+	/archive/[id]: /archive/0
+	/archive/[id]: /archive/1
+	/archive/[id]: /archive/10
+	/archive/[id]: /archive/2
+	/archive/[id]: /archive/3
+	/archive/[id]: /archive/4
+	/archive/[id]: /archive/5
+	/archive/[id]: /archive/6
+	/archive/[id]: /archive/7
+	/archive/[id]: /archive/8
+	/archive/[id]: /archive/9
+    at /Users/francesco/Documents/Progetti/Progetti personali/francescobarbieri.me/node_modules/next/dist/export/index.js:409:19
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Span.traceAsyncFn (/Users/francesco/Documents/Progetti/Progetti personali/francescobarbieri.me/node_modules/next/dist/trace/trace.js:79:20)
+    at async /Users/francesco/Documents/Progetti/Progetti personali/francescobarbieri.me/node_modules/next/dist/build/index.js:1398:21
+    at async Span.traceAsyncFn (/Users/francesco/Documents/Progetti/Progetti personali/francescobarbieri.me/node_modules/next/dist/trace/trace.js:79:20)
+    at async /Users/francesco/Documents/Progetti/Progetti personali/francescobarbieri.me/node_modules/next/dist/build/index.js:1258:17
+    at async Span.traceAsyncFn (/Users/francesco/Documents/Progetti/Progetti personali/francescobarbieri.me/node_modules/next/dist/trace/trace.js:79:20)
+    at async build (/Users/francesco/Documents/Progetti/Progetti personali/francescobarbieri.me/node_modules/next/dist/build/index.js:66:29)
+    at async build (/Users/francesco/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/frameworks/next/index.js:33:5)
+    at async prepareFrameworks (/Users/francesco/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/frameworks/index.js:239:93)
+    at async deploy (/Users/francesco/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/deploy/index.js:53:13)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-01-30T17:04:56.705Z] ----------------------------------------------------------------------
+[debug] [2023-01-30T17:04:56.706Z] Command:       /usr/local/bin/firebase /Users/francesco/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2023-01-30T17:04:56.706Z] CLI Version:   11.15.0
+[debug] [2023-01-30T17:04:56.706Z] Platform:      darwin
+[debug] [2023-01-30T17:04:56.707Z] Node Version:  v16.16.0
+[debug] [2023-01-30T17:04:56.708Z] Time:          Mon Jan 30 2023 18:04:56 GMT+0100 (GMT+01:00)
+[debug] [2023-01-30T17:04:56.708Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-30T17:04:56.805Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-30T17:04:56.806Z] > authorizing via signed-in user (fbarbieri.business@gmail.com)
+[debug] [2023-01-30T17:04:56.807Z] [iam] checking project francescobarbieri-73605 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-01-30T17:04:56.808Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/francescobarbieri-73605:testIamPermissions [none]
+[debug] [2023-01-30T17:04:56.809Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/francescobarbieri-73605:testIamPermissions x-goog-quota-user=projects/francescobarbieri-73605
+[debug] [2023-01-30T17:04:56.810Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/francescobarbieri-73605:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-01-30T17:04:57.582Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/francescobarbieri-73605:testIamPermissions 200
+[debug] [2023-01-30T17:04:57.585Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/francescobarbieri-73605:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-01-30T17:04:57.587Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/francescobarbieri-73605/serviceAccounts/francescobarbieri-73605@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-01-30T17:04:57.588Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/francescobarbieri-73605/serviceAccounts/francescobarbieri-73605@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-01-30T17:04:58.273Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/francescobarbieri-73605/serviceAccounts/francescobarbieri-73605@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-01-30T17:04:58.275Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/francescobarbieri-73605/serviceAccounts/francescobarbieri-73605@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-01-30T17:04:58.276Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605 [none]
+[debug] [2023-01-30T17:04:58.606Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605 200
+[debug] [2023-01-30T17:04:58.609Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605 {"projectId":"francescobarbieri-73605","projectNumber":"349921029341","displayName":"francescobarbieri","name":"projects/francescobarbieri-73605","resources":{"hostingSite":"francescobarbieri-73605","storageBucket":"francescobarbieri-73605.appspot.com","locationId":"europe-west3"},"state":"ACTIVE","etag":"1_822d581a-4467-487f-8b9b-398222c9c662"}
+[debug] [2023-01-30T17:05:01.065Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites pageToken=&pageSize=10
+[debug] [2023-01-30T17:05:02.094Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites 200
+[debug] [2023-01-30T17:05:02.097Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites {"sites":[{"name":"projects/francescobarbieri-73605/sites/francescobarbieri-73605","defaultUrl":"https://francescobarbieri-73605.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-01-30T17:05:02.098Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites 
+[debug] [2023-01-30T17:05:03.064Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites 200
+[debug] [2023-01-30T17:05:03.065Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites {"sites":[{"name":"projects/francescobarbieri-73605/sites/francescobarbieri-73605","defaultUrl":"https://francescobarbieri-73605.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-01-30T17:05:03.066Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605/webApps/-/config [none]
+[debug] [2023-01-30T17:05:03.689Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605/webApps/-/config 200
+[debug] [2023-01-30T17:05:03.690Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605/webApps/-/config {"projectId":"francescobarbieri-73605","appId":"1:349921029341:web:2a4e8277e8f6cefaa13f34","storageBucket":"francescobarbieri-73605.appspot.com","locationId":"europe-west3","apiKey":"AIzaSyAXONjVwtIXH_3tnFwN4lDwhxlzZpyVxSc","authDomain":"francescobarbieri-73605.firebaseapp.com","messagingSenderId":"349921029341","measurementId":"G-346GLLMGV4"}
+[debug] [2023-01-30T17:05:22.926Z] Error: Command failed: npm i --omit dev --no-audit
+    at checkExecSyncError (node:child_process:828:11)
+    at Object.execSync (node:child_process:899:15)
+    at execSync (pkg/prelude/bootstrap.js:2115:30)
+    at prepareFrameworks (/Users/francesco/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/frameworks/index.js:324:42)
+    at async deploy (/Users/francesco/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/deploy/index.js:53:13)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-01-30T17:06:49.181Z] ----------------------------------------------------------------------
+[debug] [2023-01-30T17:06:49.183Z] Command:       /usr/local/bin/firebase /Users/francesco/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy --only hosting
+[debug] [2023-01-30T17:06:49.184Z] CLI Version:   11.15.0
+[debug] [2023-01-30T17:06:49.184Z] Platform:      darwin
+[debug] [2023-01-30T17:06:49.184Z] Node Version:  v16.16.0
+[debug] [2023-01-30T17:06:49.185Z] Time:          Mon Jan 30 2023 18:06:49 GMT+0100 (GMT+01:00)
+[debug] [2023-01-30T17:06:49.186Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-30T17:06:49.293Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-30T17:06:49.294Z] > authorizing via signed-in user (fbarbieri.business@gmail.com)
+[debug] [2023-01-30T17:06:49.294Z] [iam] checking project francescobarbieri-73605 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-01-30T17:06:49.296Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/francescobarbieri-73605:testIamPermissions [none]
+[debug] [2023-01-30T17:06:49.297Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/francescobarbieri-73605:testIamPermissions x-goog-quota-user=projects/francescobarbieri-73605
+[debug] [2023-01-30T17:06:49.298Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/francescobarbieri-73605:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-01-30T17:06:50.122Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/francescobarbieri-73605:testIamPermissions 200
+[debug] [2023-01-30T17:06:50.126Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/francescobarbieri-73605:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-01-30T17:06:50.129Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605 [none]
+[debug] [2023-01-30T17:06:50.442Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605 200
+[debug] [2023-01-30T17:06:50.446Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605 {"projectId":"francescobarbieri-73605","projectNumber":"349921029341","displayName":"francescobarbieri","name":"projects/francescobarbieri-73605","resources":{"hostingSite":"francescobarbieri-73605","storageBucket":"francescobarbieri-73605.appspot.com","locationId":"europe-west3"},"state":"ACTIVE","etag":"1_822d581a-4467-487f-8b9b-398222c9c662"}
+[debug] [2023-01-30T17:06:52.897Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites pageToken=&pageSize=10
+[debug] [2023-01-30T17:06:53.888Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites 200
+[debug] [2023-01-30T17:06:53.889Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites {"sites":[{"name":"projects/francescobarbieri-73605/sites/francescobarbieri-73605","defaultUrl":"https://francescobarbieri-73605.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-01-30T17:06:53.890Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites 
+[debug] [2023-01-30T17:06:54.892Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites 200
+[debug] [2023-01-30T17:06:54.894Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites {"sites":[{"name":"projects/francescobarbieri-73605/sites/francescobarbieri-73605","defaultUrl":"https://francescobarbieri-73605.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-01-30T17:06:54.894Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605/webApps/-/config [none]
+[debug] [2023-01-30T17:06:55.580Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605/webApps/-/config 200
+[debug] [2023-01-30T17:06:55.580Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605/webApps/-/config {"projectId":"francescobarbieri-73605","appId":"1:349921029341:web:2a4e8277e8f6cefaa13f34","storageBucket":"francescobarbieri-73605.appspot.com","locationId":"europe-west3","apiKey":"AIzaSyAXONjVwtIXH_3tnFwN4lDwhxlzZpyVxSc","authDomain":"francescobarbieri-73605.firebaseapp.com","messagingSenderId":"349921029341","measurementId":"G-346GLLMGV4"}
+[debug] [2023-01-30T17:07:13.265Z] Error: Command failed: npm i --omit dev --no-audit
+    at checkExecSyncError (node:child_process:828:11)
+    at Object.execSync (node:child_process:899:15)
+    at execSync (pkg/prelude/bootstrap.js:2115:30)
+    at prepareFrameworks (/Users/francesco/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/frameworks/index.js:324:42)
+    at async deploy (/Users/francesco/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/deploy/index.js:53:13)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-01-30T17:09:09.402Z] ----------------------------------------------------------------------
+[debug] [2023-01-30T17:09:09.403Z] Command:       /usr/local/bin/firebase /Users/francesco/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2023-01-30T17:09:09.404Z] CLI Version:   11.15.0
+[debug] [2023-01-30T17:09:09.404Z] Platform:      darwin
+[debug] [2023-01-30T17:09:09.404Z] Node Version:  v16.16.0
+[debug] [2023-01-30T17:09:09.405Z] Time:          Mon Jan 30 2023 18:09:09 GMT+0100 (GMT+01:00)
+[debug] [2023-01-30T17:09:09.405Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-30T17:09:09.508Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-30T17:09:09.509Z] > authorizing via signed-in user (fbarbieri.business@gmail.com)
+[debug] [2023-01-30T17:09:09.510Z] [iam] checking project francescobarbieri-73605 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-01-30T17:09:09.512Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/francescobarbieri-73605:testIamPermissions [none]
+[debug] [2023-01-30T17:09:09.513Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/francescobarbieri-73605:testIamPermissions x-goog-quota-user=projects/francescobarbieri-73605
+[debug] [2023-01-30T17:09:09.514Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/francescobarbieri-73605:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-01-30T17:09:10.294Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/francescobarbieri-73605:testIamPermissions 200
+[debug] [2023-01-30T17:09:10.297Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/francescobarbieri-73605:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-01-30T17:09:10.299Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/francescobarbieri-73605/serviceAccounts/francescobarbieri-73605@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-01-30T17:09:10.300Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/francescobarbieri-73605/serviceAccounts/francescobarbieri-73605@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-01-30T17:09:10.992Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/francescobarbieri-73605/serviceAccounts/francescobarbieri-73605@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-01-30T17:09:10.994Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/francescobarbieri-73605/serviceAccounts/francescobarbieri-73605@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-01-30T17:09:10.996Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605 [none]
+[debug] [2023-01-30T17:09:11.270Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605 200
+[debug] [2023-01-30T17:09:11.273Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605 {"projectId":"francescobarbieri-73605","projectNumber":"349921029341","displayName":"francescobarbieri","name":"projects/francescobarbieri-73605","resources":{"hostingSite":"francescobarbieri-73605","storageBucket":"francescobarbieri-73605.appspot.com","locationId":"europe-west3"},"state":"ACTIVE","etag":"1_822d581a-4467-487f-8b9b-398222c9c662"}
+[debug] [2023-01-30T17:09:13.726Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites pageToken=&pageSize=10
+[debug] [2023-01-30T17:09:14.756Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites 200
+[debug] [2023-01-30T17:09:14.759Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites {"sites":[{"name":"projects/francescobarbieri-73605/sites/francescobarbieri-73605","defaultUrl":"https://francescobarbieri-73605.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-01-30T17:09:14.760Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites 
+[debug] [2023-01-30T17:09:15.740Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites 200
+[debug] [2023-01-30T17:09:15.740Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/francescobarbieri-73605/sites {"sites":[{"name":"projects/francescobarbieri-73605/sites/francescobarbieri-73605","defaultUrl":"https://francescobarbieri-73605.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-01-30T17:09:15.741Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605/webApps/-/config [none]
+[debug] [2023-01-30T17:09:16.358Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605/webApps/-/config 200
+[debug] [2023-01-30T17:09:16.358Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/francescobarbieri-73605/webApps/-/config {"projectId":"francescobarbieri-73605","appId":"1:349921029341:web:2a4e8277e8f6cefaa13f34","storageBucket":"francescobarbieri-73605.appspot.com","locationId":"europe-west3","apiKey":"AIzaSyAXONjVwtIXH_3tnFwN4lDwhxlzZpyVxSc","authDomain":"francescobarbieri-73605.firebaseapp.com","messagingSenderId":"349921029341","measurementId":"G-346GLLMGV4"}
+[debug] [2023-01-30T17:09:33.367Z] Error: Command failed: npm i --omit dev --no-audit
+    at checkExecSyncError (node:child_process:828:11)
+    at Object.execSync (node:child_process:899:15)
+    at execSync (pkg/prelude/bootstrap.js:2115:30)
+    at prepareFrameworks (/Users/francesco/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/frameworks/index.js:324:42)
+    at async deploy (/Users/francesco/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/deploy/index.js:53:13)
+[error] 
+[error] Error: An unexpected error has occurred.

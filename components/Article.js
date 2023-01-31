@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "../styles/Article.module.css";
 import Link from "next/link";
 import { robotoSlab } from "../components/fonts";
+import format from "date-fns/format";
 
 const Article = ({ articleData, style }) => {
     return (
@@ -15,7 +16,7 @@ const Article = ({ articleData, style }) => {
                         >
                             <p className={styles.tag}>{articleData.tag}</p>
                         </Link>
-                        <p className={styles.date}>{articleData.date}</p>
+                        <p className={styles.date}>{format(Date.parse(articleData.date), "MMMM d, yyyy")}</p>
                     </div>
                     <Link
                         href={"/archive/" + articleData.id}
