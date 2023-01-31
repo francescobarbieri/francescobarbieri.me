@@ -13,8 +13,6 @@ import { getSortedPostsData } from "../components/posts";
 export default function Home(props) {
     const { allRecentPostsData } = props;
 
-    console.log(allRecentPostsData)
-
     return (
         <>
             <Head>
