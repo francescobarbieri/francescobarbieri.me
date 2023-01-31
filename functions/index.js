@@ -3,11 +3,12 @@ const axios = require('axios');
 
 exports.checkRecaptcha = functions.region('europe-west3').https.onRequest((req, res) => {
     
-    res.set('Access-Control-Allow-Origin', 'https://francescobarbieri-me.vercel.app/');
+    res.set('Access-Control-Allow-Origin', '*');
+    //res.set('Access-Control-Allow-Origin', 'https://francescobarbieri-me.vercel.app/');
     
     if(req.method === 'OPTIONS')
     {
-        res.set('Access-Control-Allow-Methods', 'GET');
+        res.set('Access-Control-Allow-Methods', 'POST');
         res.set('Access-Control-Allow-Headers', 'Content-Type');
         res.set('Access-Control-Max-Age', '3600');
         res.status(204).send('');

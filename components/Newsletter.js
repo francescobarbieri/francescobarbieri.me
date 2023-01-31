@@ -72,7 +72,7 @@ const Newsletter = () => {
 async function formSubmit(e, emailRef, recaptchaRef) {
     e.preventDefault();
 
-    axios.post("https://us-central1-francescobarbieri-73605.cloudfunctions.net/checkRecaptcha", {
+    axios.post("https://europe-west3-francescobarbieri-73605.cloudfunctions.net/checkRecaptcha", {
         email: emailRef,
         token: recaptchaRef,
     })
