@@ -56,6 +56,18 @@
     display: none;
 }
 
+.loading {
+    pointer-events: none !important;
+    background-color: gray !important;
+    color: black !important;
+}
+
+.done {
+    pointer-events: none !important;
+    background-color: green !important;
+    color: #fff !important;
+}
+
 @media screen and (min-width: 640px) {
     .submitButton {
         padding-left: 1.875rem;

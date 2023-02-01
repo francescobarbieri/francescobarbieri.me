@@ -1,12 +1,14 @@
 import styles from "../styles/Newsletter.module.css";
 import SectionTitle from "./SectionTitle";
-import { useRef, createRef } from "react";
+import { useRef, createRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios';
 
 const Newsletter = () => {
     const emailRef = useRef();
-    const recaptchaRef = createRef();
+    const recaptchaRef = useRef();
+    const [loading, setLoading] = useState(false);
+    const [done, setDone] = useState(false);
 
     return (
         <section>
@@ -19,7 +21,7 @@ const Newsletter = () => {
                 </p>
                 <form
                     className={styles.form}
-                    onSubmit={(e) => formSubmit(e, emailRef, recaptchaRef)}
+                    onSubmit={(e) => formSubmit(e, emailRef, recaptchaRef, setLoading, setDone)}
                 >
                     <div className={styles.inputContainer}>
                         <input
@@ -27,6 +29,7 @@ const Newsletter = () => {
                             placeholder="Email address"
                             className={styles.emailInput}
                             ref={emailRef}
+                            disabled={loading}
                         />
                         <svg
                             className={styles.inputIcon}
@@ -38,13 +41,18 @@ const Newsletter = () => {
                             <path d="m1 6 8 5 8-5V4L9 9 1 4c0-1.1.9-2 2-2h12c1.09 0 2 .91 2 2v10c0 1.09-.91 2-2 2H3c-1.09 0-2-.91-2-2V6Z"></path>
                         </svg>
                     </div>
-                    <button type="submit" className={styles.submitButton}>
-                        Subscribe
+                    <button type="submit" className={`${styles.submitButton} ${!loading ? undefined : styles.loading} ${done ? styles.done : undefined}`}>
+                        {!loading ? 
+                            <>
+                                {done ? "Done" : "Subscribe"}
+                            </>
+                        : "Loading"}
                     </button>
                     <ReCAPTCHA
                         ref={recaptchaRef}
                         size="invisible"
-                        sitekey="6Lfpo_QjAAAAAON2uiE5fryrz_dqmr0IR26DwJeP"
+                        sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                        // real sitekey="6Lfpo_QjAAAAAON2uiE5fryrz_dqmr0IR26DwJeP"
                     />
                 </form>
                 <svg
@@ -69,15 +77,21 @@ const Newsletter = () => {
     );
 };
 
-async function formSubmit(e, emailRef, recaptchaRef) {
+async function formSubmit(e, emailRef, recaptchaRef, setLoading, setDone) {
     e.preventDefault();
+    setLoading(true);
 
-    axios.post("https://europe-west3-francescobarbieri-73605.cloudfunctions.net/checkRecaptcha", {
-        email: emailRef.current,
-        token: recaptchaRef,
+    const token = await recaptchaRef.current.executeAsync();
+
+    axios.post("/api/addNewsletter", {
+        email: emailRef.current.value,
+        token: token,
     })
     .then((res) => {
-        console.log(res);
+        console.log(res)
+        setLoading(false);
+        setDone(true);
+        emailRef.current.value = '';
     })
 }
 

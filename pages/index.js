@@ -2,12 +2,8 @@ import Head from "next/head";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
-import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
-import { format } from "date-fns";
-import { db } from "../components/firebase";
 import SectionTitle from "../components/SectionTitle";
 import ArticlesCollection from "../components/ArticlesCollection";
-import { useEffect, useState } from "react";
 import { getSortedPostsData } from "../components/posts";
 
 export default function Home(props) {
