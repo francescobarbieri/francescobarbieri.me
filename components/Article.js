@@ -23,14 +23,14 @@ const Article = ({ articleData, style }) => {
                         href={"/archive/" + articleData.id}
                         className={styles.titleLink}
                     >
-                        <h2
+                        <h3
                             className={[
                                 styles.title,
                                 robotoSlab.className,
                             ].join(" ")}
                         >
                             {articleData.title}
-                        </h2>
+                        </h3>
                     </Link>
                     <p className={styles.preview}>{articleData.preview}</p>
                 </div>

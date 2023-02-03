@@ -31,7 +31,7 @@ const Navbar = () => {
                     Francesco Barbieri
                 </h1>
                 <p className={styles.slogan}>
-                    Where innovation inspires to build a better future
+                    Tech, finance, actuality and much more
                 </p>
             </div>
             <nav className={styles.navRoutes}>

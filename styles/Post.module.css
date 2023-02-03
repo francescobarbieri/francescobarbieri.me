@@ -49,10 +49,11 @@
     grid-column-start: 2;
     grid-column-end: 3;
     text-align: left;
-    font-size: 1.2187rem;
-    margin-top: 2rem;
+    font-size: 1.16rem;
+    margin-top: 1.7rem;
     line-height: 1.75rem;
     position: relative;
+    color: var(--second-text);
 }
 
 .body p {
@@ -67,6 +68,12 @@
     width: 100%;
 }
 
+.body h3 {
+    margin-top: 2.5rem;
+    font-family: 'Roboto Slab', serif;
+    color: var(--main-text);
+}
+
 .hr {
     border-bottom: 1px solid gray;
     grid-column-start: 1;
@@ -77,15 +84,14 @@
 @media screen and (min-width: 640px) {
     .postGrid {
         display: grid;
-        grid-template-columns: 0.17fr 1fr 0.17fr;
+        grid-template-columns: 0.15fr 1fr 0.15fr;
         width: 100%;
     }
     
     .header {
-        display: grid;
-        grid-template-columns: 0.17fr 1fr 0.17fr;   
-        grid-area: 1 / 1 / 1 / 4;
+        grid-area: 1 / 2 / 1 / 4;
     }
+
     .icon {
         display: block;
     }

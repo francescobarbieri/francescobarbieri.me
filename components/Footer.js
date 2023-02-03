@@ -12,7 +12,7 @@ const Footer = () => {
             <div className={styles.contactsContainer}>
                 <div className={styles.contactsRow}>
                     <svg
-                        className={styles.contactsIcon}
+                        className={[styles.contactsIcon, "svg-icon"].join(" ")}
                         aria-hidden="true"
                         width="24"
                         height="24"
@@ -29,7 +29,7 @@ const Footer = () => {
                 </div>
                 <div className={styles.contactsRow}>
                     <svg
-                        className={styles.contactsIcon}
+                        className={[styles.contactsIcon, "svg-icon"].join(" ")}
                         aria-hidden="true"
                         width="24"
                         height="24"
@@ -86,7 +86,8 @@ const Footer = () => {
                 </div>
             </div>
             <p className={styles.copyright}>
-                Thank you for visiting my blog!
+                Thank you for visiting my blog!<br/><br/>
+                <a href="/privacy-policy.pdf" target="_blank">Privacy Policy</a>
                 <br />© Francesco Barbieri {year}
             </p>
         </footer>

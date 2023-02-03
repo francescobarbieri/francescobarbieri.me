@@ -11,7 +11,20 @@ export default function Unsub() {
     return (
         <>
             <Head>
-                <title>Unsubscribe from newsletter - Francesco Barbieri</title>
+                <meta charSet="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <meta http-equiv="x-ua-compatible" content="ie=edge" />
+                <meta http-equip="content-language" content="en-US" data-react-helmet="true"/>
+                
+                <meta name="robots" content="noindex,nofollow" />
+
+                <link rel="canonical" href="https://francescobarbieri.blog/unsub"/>
+                <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+                <meta name="description" content="Unsubscribe from the newsletter." key="desc" />
+
+                <title>Unsubscribe | Francesco Barbieri's Blog</title>
+                <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className={styles.container}>
                 <h3 className={robotoSlab.className}>Francesco Barbieri</h3>

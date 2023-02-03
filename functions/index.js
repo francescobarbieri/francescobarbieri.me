@@ -20,7 +20,7 @@ exports.checkRecaptcha = functions.region('europe-west3').https.onRequest(async 
             uri: 'https://recaptcha.google.com/recaptcha/api/siteverify',
             method: 'POST',
             formData: {
-                secret: process.env.RECAPTCHA_SECRET_TEST,
+                secret: process.env.RECAPTCHA_SECRET,
                 response: req.body.token
             },
             json: true

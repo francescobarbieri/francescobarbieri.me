@@ -1,25 +1,33 @@
 :root {
   --background: #fefefe;
   --main-text: rgba(0, 0, 0, .87);
+  --second-text: rgba(0, 0, 0, .66);
 
+  --article-border: #D3D3D3;
   --tag-text: #0071E3;
   --tag-bg: rgba(0, 113, 227, 0.21);
   --date-text: rgba(0, 0, 0, .33);
 
   --newsletter-bg: #212932;
   --newsletter-text: #e7e8eb;
+
+  --footer-text: rgba(0,0,0, .66);
 }
 
 [data-theme='dark'] {
-  --background: rgb(45, 45, 45);
-  --main-text: #e7e8eb;
+  --background: #121212;
+  --main-text: rgba(256,256,256, 0.87);
+  --second-text: rgba(256,256,256, 0.60);
 
+  --article-border: #4c4c4c;
   --tag-text: rgb(156, 195, 219);
   --tag-bg: rgb(62, 74, 82);
   --date-text: #7D848D;
 
   --newsletter-bg: #dadee0;
   --newsletter-text: rgba(0,0,0, .87);
+
+  --footer-text: #7D848D;
 }
 
 html, body {
@@ -36,22 +44,26 @@ h1 {
   margin-block-start: 0;
   font-weight: 600;
   text-align: left;
+  font-display: swap;
 }
 
 h2 {
   margin-block-end: 0;
   margin-block-start: 0;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 2rem;
   text-align: left;
+  font-size: 2.25rem;
+  font-display: swap;
 }
 
 h3 {
   margin-block-end: 0;
   margin-block-start: 0;
-  font-weight: 600;
-  font-size: 1.5625rem;
+  font-weight: 500;
+  font-size: 1.5rem;
   text-align: left;
+  font-display: swap;
 }
 
 p {
@@ -70,6 +82,10 @@ section {
   height: fit-content;
   padding: 0 1rem 0 1rem;
   position: relative;
+}
+
+.svg-icon {
+  fill: var(--main-text);
 }
 
 @media screen and (min-width: 640px) {

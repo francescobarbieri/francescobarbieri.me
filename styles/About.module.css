@@ -1,0 +1,45 @@
+.container {
+    text-align: left;
+    font-size: 1.0625rem;
+}
+
+.svg {
+    margin-top: .6rem;
+}
+
+.book {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    margin-top: 2rem;
+    gap: .6rem;
+    flex-wrap: nowrap;
+}
+
+.bookTitle {
+    font-weight: 600;
+    color: var(--main-text);
+    text-decoration: none;
+    font-size: 1.5625rem;
+}
+
+.bookTitle:hover {
+    color: #0071E3;
+}
+
+.bookDescr {
+    margin-top: .5rem;
+    max-width: 85ch;
+    color: var(--second-text);
+    font-size: 1.16rem;
+}
+
+.aboutText {
+    max-width: 85ch;
+    color: var(--second-text);
+    font-size: 1.16rem;
+}
+
+.subsection {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}

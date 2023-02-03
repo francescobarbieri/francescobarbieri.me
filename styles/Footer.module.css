@@ -6,7 +6,7 @@
 
 .copyright {
     font-size: 0.8125rem;
-    color: rgba(0,0,0, .66);
+    color: var(--footer-text);
 }
 
 .contactsContainer {
@@ -19,8 +19,8 @@
 }
 
 .contactsRow a {
-    font-size: 1.0625rem;
-    color: rgba(0,0,0, .87);
+    font-size: 1rem;
+    color: var(--second-text);
 }
 
 .contactsIcon {

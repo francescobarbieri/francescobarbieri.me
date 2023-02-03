@@ -3,60 +3,73 @@ import SectionTitle from "./SectionTitle";
 import { useRef, createRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios';
+import { Alert } from "@mui/material";
 
 const Newsletter = () => {
-    const emailRef = useRef();
     const recaptchaRef = useRef();
+    const [emailState, setEmailState] = useState();
     const [loading, setLoading] = useState(false);
     const [done, setDone] = useState(false);
+
+    /*
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+    do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua.
+    */
 
     return (
         <section>
             <div className={styles.newsletter}>
                 <SectionTitle title="Newsletter" icon="newsletter" />
                 <p className={styles.newsletterSlogan}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    Do you want to be notified when new posts are available? Subscribe to the newsletter!
+                    Check privacy policy first.
                 </p>
                 <form
                     className={styles.form}
-                    onSubmit={(e) => formSubmit(e, emailRef, recaptchaRef, setLoading, setDone)}
+                    onSubmit={(e) => formSubmit(e, emailState, recaptchaRef, setLoading, setDone)}
                 >
-                    <div className={styles.inputContainer}>
-                        <input
-                            type="email"
-                            placeholder="Email address"
-                            className={styles.emailInput}
-                            ref={emailRef}
-                            disabled={loading}
-                        />
-                        <svg
-                            className={styles.inputIcon}
-                            aria-hidden="true"
-                            width="18"
-                            height="18"
-                            viewBox="0 0 18 18"
-                        >
-                            <path d="m1 6 8 5 8-5V4L9 9 1 4c0-1.1.9-2 2-2h12c1.09 0 2 .91 2 2v10c0 1.09-.91 2-2 2H3c-1.09 0-2-.91-2-2V6Z"></path>
-                        </svg>
-                    </div>
-                    <button type="submit" className={`${styles.submitButton} ${!loading ? undefined : styles.loading} ${done ? styles.done : undefined}`}>
-                        {!loading ? 
-                            <>
-                                {done ? "Done" : "Subscribe"}
-                            </>
-                        : "Loading"}
-                    </button>
+
+                    {done ? (
+                        <Alert severity="success" onClose={() => setDone(false)}>
+                            Your email has been added! <strong>Check your inbox!</strong>
+                        </Alert>
+                    ) : (
+                        <>
+                            <div className={styles.inputContainer}>
+                                <input
+                                    type="email"
+                                    placeholder="Email address"
+                                    className={styles.emailInput}
+                                    onChange={(item) => setEmailState(item.target.value)}
+                                    disabled={loading}
+                                    required={true}
+                                />
+                                <svg
+                                    className={[styles.inputIcon, "svg-icon"].join(" ")}
+                                    aria-hidden="true"
+                                    width="18"
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                >
+                                    <path d="m1 6 8 5 8-5V4L9 9 1 4c0-1.1.9-2 2-2h12c1.09 0 2 .91 2 2v10c0 1.09-.91 2-2 2H3c-1.09 0-2-.91-2-2V6Z"></path>
+                                </svg>
+                            </div>
+                            <button type="submit" className={`${styles.submitButton} ${!loading ? undefined : styles.loading} ${done ? styles.done : undefined}`}>
+                                {!loading ? "Subscribe" : "Loading"}
+                            </button>
+                        </>
+                    )
+                    }
                     <ReCAPTCHA
                         ref={recaptchaRef}
                         size="invisible"
-                        sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-                        // real sitekey="6Lfpo_QjAAAAAON2uiE5fryrz_dqmr0IR26DwJeP"
+                        sitekey="6Lfpo_QjAAAAAON2uiE5fryrz_dqmr0IR26DwJeP"
+                        // test sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
                     />
                 </form>
                 <svg
-                    className={styles.image}
+                    className={[styles.image, "svg-icon"].join(" ")}
                     aria-hidden="true"
                     width="238"
                     height="238"
@@ -77,21 +90,21 @@ const Newsletter = () => {
     );
 };
 
-async function formSubmit(e, emailRef, recaptchaRef, setLoading, setDone) {
+async function formSubmit(e, emailState, recaptchaRef, setLoading, setDone) {
     e.preventDefault();
     setLoading(true);
 
     const token = await recaptchaRef.current.executeAsync();
 
     axios.post("/api/addNewsletter", {
-        email: emailRef.current.value,
+        email: emailState,
         token: token,
     })
     .then((res) => {
         console.log(res)
         setLoading(false);
         setDone(true);
-        emailRef.current.value = '';
+        emailState = '';
     })
 }
 

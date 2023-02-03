@@ -8,6 +8,7 @@
     font-size: 1.0625rem;
     line-height: 1.5rem;
     margin-bottom: 1.4625rem;
+    color: var(--second-text);
 }
 
 .form {
@@ -28,6 +29,7 @@
     position: relative;
     box-sizing: border-box;
     margin-right: 2.8rem;
+    margin-bottom: 12px;
 }
 
 .inputIcon {
@@ -50,6 +52,7 @@
     font-size: 0.9375rem;
     border-radius: 4px;
     font-family: inherit;
+    max-height: 2.25rem;
 }
 
 .image {
