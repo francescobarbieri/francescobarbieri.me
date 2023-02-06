@@ -32,12 +32,24 @@
     font-size: 0.9375rem;
     border-radius: 4px;
     font-family: inherit;
+    max-height: 2.375rem;
 }
 
 .loading {
     pointer-events: none !important;
     background-color: rgb(179, 179, 179) !important;
     color: rgba(0, 0, 0, 0.871) !important;
+}
+
+.error {
+    border: 2px solid red !important;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.errorText {
+    color: rgb(196, 3, 3);
 }
 
 @media screen and (min-width: 500px) {

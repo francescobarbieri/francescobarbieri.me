@@ -51,6 +51,7 @@ const Navbar = () => {
                 <button
                     className={styles.themeButton}
                     onClick={() => setTheme(theme == "dark" ? "light" : "dark")}
+                    aria-label="Change theme"
                 >
                     <svg
                         aria-hidden="true"

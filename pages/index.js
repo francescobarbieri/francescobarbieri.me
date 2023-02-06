@@ -13,25 +13,58 @@ export default function Home(props) {
         <>
             <Head>
                 <meta charSet="utf-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+                />
                 <meta http-equiv="x-ua-compatible" content="ie=edge" />
-                <meta http-equip="content-language" content="en-US" data-react-helmet="true"/>
+                <meta
+                    http-equip="content-language"
+                    content="en-US"
+                    data-react-helmet="true"
+                />
 
-                <link rel="canonical" href="https://francescobarbieri.blog/"/>
-                <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-                
-                <meta property="og:site_name" content="Francesco Barbieri's Blog"/>
-                <meta property="og:type" content="website"/>
-                <meta property="og:title" content="Francesco Barbieri's Blog"/>
-                <meta property="og:description" content="Blogging about programming, tech, actuality and human factors."/>
-                <meta property="og:url" content="https://francescobarbieri.blog/"/>
-                
-                <meta name="twitter:card" content="summary"/>
-                <meta name="twitter:title" content="Francesco Barbieri's Blog"/>
-                <meta name="twitter:description" content="Blogging about programming, tech, actuality and human factors."/>
-                <meta name="twitter:url" content="https://francescobarbieri.blog/"/>
+                <link rel="canonical" href="https://francescobarbieri.blog/" />
+                <link
+                    rel="sitemap"
+                    type="application/xml"
+                    href="/sitemap.xml"
+                />
 
-                <meta name="description" content="Blogging about programming, tech, actuality and human factors." key="desc" />
+                <meta
+                    property="og:site_name"
+                    content="Francesco Barbieri's Blog"
+                />
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="Francesco Barbieri's Blog" />
+                <meta
+                    property="og:description"
+                    content="Blogging about programming, tech, actuality and human factors."
+                />
+                <meta
+                    property="og:url"
+                    content="https://francescobarbieri.blog/"
+                />
+
+                <meta name="twitter:card" content="summary" />
+                <meta
+                    name="twitter:title"
+                    content="Francesco Barbieri's Blog"
+                />
+                <meta
+                    name="twitter:description"
+                    content="Blogging about programming, tech, actuality and human factors."
+                />
+                <meta
+                    name="twitter:url"
+                    content="https://francescobarbieri.blog/"
+                />
+
+                <meta
+                    name="description"
+                    content="Blogging about programming, tech, actuality and human factors."
+                    key="desc"
+                />
 
                 <title>Francesco Barbieri's Blog</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -52,7 +85,7 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-    const allRecentPostsData = getSortedPostsData().slice(0,3);
+    const allRecentPostsData = getSortedPostsData().slice(0, 3);
     return {
         props: {
             allRecentPostsData,

@@ -86,8 +86,12 @@ const Footer = () => {
                 </div>
             </div>
             <p className={styles.copyright}>
-                Thank you for visiting my blog!<br/><br/>
-                <a href="/privacy-policy.pdf" target="_blank">Privacy Policy</a>
+                Thank you for visiting my blog!
+                <br />
+                <br />
+                <a href="/privacy-policy.pdf" target="_blank">
+                    Privacy Policy
+                </a>
                 <br />© Francesco Barbieri {year}
             </p>
         </footer>

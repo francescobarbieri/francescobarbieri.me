@@ -5,7 +5,6 @@ import { robotoSlab } from "../components/fonts";
 import format from "date-fns/format";
 
 const Article = ({ articleData, style }) => {
-
     return (
         <article className={[styles.article, style].join(" ")}>
             <div className={styles.articleContent}>
@@ -17,7 +16,12 @@ const Article = ({ articleData, style }) => {
                         >
                             <p className={styles.tag}>{articleData.tag}</p>
                         </Link>
-                        <p className={styles.date}>{format(Date.parse(articleData.date), "MMMM d, yyyy")}</p>
+                        <p className={styles.date}>
+                            {format(
+                                Date.parse(articleData.date),
+                                "MMMM d, yyyy"
+                            )}
+                        </p>
                     </div>
                     <Link
                         href={"/archive/" + articleData.id}
@@ -37,6 +41,7 @@ const Article = ({ articleData, style }) => {
                 <Link
                     href={"/archive/" + articleData.id}
                     className={styles.link}
+                    aria-label={articleData.title}
                 >
                     <button className={styles.button}>
                         Read more

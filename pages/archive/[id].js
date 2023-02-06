@@ -3,7 +3,6 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import styles from "../../styles/Post.module.css";
 import Link from "next/link";
-import { robotoSlab } from "../../components/fonts";
 import format from "date-fns/format";
 import { getAllPostIds, getPostData } from "../../components/posts";
 import Newsletter from "../../components/Newsletter";
@@ -31,10 +30,6 @@ const Post = ({ postData }) => {
                 <meta name="twitter:title" content={postData.title + " | Francesco Barbieri's Blog"}/>
                 <meta name="twitter:description" content={postData.preview}/>
                 <meta name="twitter:url" content={"https://francescobarbieri.blog/archive/" + postData.id}/>
-
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-                <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet" />
 
                 <meta name="description" content={postData.preview} key="desc" />
 
@@ -66,7 +61,7 @@ const Post = ({ postData }) => {
                                             )}
                                         </p>
                                     </div>
-                                    <h2 className={robotoSlab.className}>
+                                    <h2>
                                         {postData.title}
                                     </h2>
                                 </div>
