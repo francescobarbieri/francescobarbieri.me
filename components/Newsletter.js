@@ -11,12 +11,6 @@ const Newsletter = () => {
     const [loading, setLoading] = useState(false);
     const [done, setDone] = useState(false);
 
-    /*
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-    do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua.
-    */
-
     return (
         <section>
             <div className={styles.newsletter}>
@@ -55,7 +49,7 @@ const Newsletter = () => {
                                     <path d="m1 6 8 5 8-5V4L9 9 1 4c0-1.1.9-2 2-2h12c1.09 0 2 .91 2 2v10c0 1.09-.91 2-2 2H3c-1.09 0-2-.91-2-2V6Z"></path>
                                 </svg>
                             </div>
-                            <button type="submit" className={`${styles.submitButton} ${!loading ? undefined : styles.loading} ${done ? styles.done : undefined}`}>
+                            <button type="submit" className={`${styles.submitButton} ${!loading ? undefined : styles.loading}`}>
                                 {!loading ? "Subscribe" : "Loading"}
                             </button>
                         </>

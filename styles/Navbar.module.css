@@ -32,7 +32,6 @@
     padding-inline-start: 0;
     gap: .7rem;
     align-items: center;
-    overflow-x: scroll;
 }
 
 .navLink {

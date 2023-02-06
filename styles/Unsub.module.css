@@ -34,6 +34,12 @@
     font-family: inherit;
 }
 
+.loading {
+    pointer-events: none !important;
+    background-color: rgb(179, 179, 179) !important;
+    color: rgba(0, 0, 0, 0.871) !important;
+}
+
 @media screen and (min-width: 500px) {
     .container {
         padding: 2rem;

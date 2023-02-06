@@ -1,4 +1,5 @@
 const Mailjet = require("node-mailjet");
+const axios = require('axios')
 
 export default async function removeNewsletter(req, res) {
 
@@ -8,19 +9,23 @@ export default async function removeNewsletter(req, res) {
         apiSecret: process.env.MAILJET_SECRET,
     });
 
-    // Remove user from contact list
-    const removeFromList = await mailjet
-        .post("contact")
+    // Get user ID
+
+    const getUID = await mailjet
+        .get("contact",{'version': 'v3'})
         .id(req.body.email)
-        .action("managecontactslists")
-        .request({
-            ContactsLists: [
-                {
-                    Action: "remove",
-                    ListID: "37254",
-                },
-            ],
-        });
+        .request();
+
+    const UID = String(getUID.body.Data[0].ID);
     
-    res.status(200).json({success: true});
+    // Delete contact
+
+    const response = await axios.delete('https://api.mailjet.com/v4/contacts/' + UID, {
+        auth: {
+            username: process.env.MAILJET_PUBLIC,
+            password: process.env.MAILJET_SECRET
+        }
+    });
+    
+    res.status(200).json({ success: true});
 }

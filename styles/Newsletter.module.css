@@ -61,14 +61,8 @@
 
 .loading {
     pointer-events: none !important;
-    background-color: gray !important;
-    color: black !important;
-}
-
-.done {
-    pointer-events: none !important;
-    background-color: green !important;
-    color: #fff !important;
+    background-color: rgb(179, 179, 179) !important;
+    color: rgba(0, 0, 0, 0.871) !important;
 }
 
 @media screen and (min-width: 640px) {

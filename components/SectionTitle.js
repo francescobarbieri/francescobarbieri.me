@@ -66,7 +66,6 @@ function printIcon(icon) {
             return (
                 <svg
                     aria-hidden="true"
-                    class="svg-spot spotForYou"
                     width="48"
                     height="48"
                     viewBox="0 0 48 48"
@@ -84,7 +83,6 @@ function printIcon(icon) {
             return (
                 <svg
                     aria-hidden="true"
-                    class="svg-spot spotSchool"
                     width="48"
                     height="48"
                     viewBox="0 0 48 48"

@@ -2,11 +2,14 @@ import Head from "next/head";
 import styles from '../styles/Unsub.module.css';
 import { robotoSlab } from "../components/fonts";
 import axios from 'axios';
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { Alert } from "@mui/material";
 
 export default function Unsub() {
+    const [loading, setLoading] = useState(false);
+    const [done, setDone] = useState(false);
 
-    const emailRef = useRef();
+    const [emailState, setEmailState] = useState();
 
     return (
         <>
@@ -31,9 +34,24 @@ export default function Unsub() {
                 <br/>
                 <p>Please, insert your email here:</p>
                 <br/>
-                <form className={styles.form} onSubmit={(e) => handleSubmit(e, emailRef)}>
-                    <input type="email" className={styles.emailInput} ref={emailRef}/>
-                    <button type="submit" className={styles.submitButton}>Remove</button>
+                <form className={styles.form} onSubmit={(e) => handleSubmit(e, emailState, setLoading, setDone)}>
+                    {done ? (
+                        <Alert severity="success" onClose={() => setDone(false)}>
+                            It's hard to let you go, but your email has been removed.
+                        </Alert>
+                    ) : (
+                        <>
+                            <input
+                                type="email"
+                                className={styles.emailInput}
+                                onChange={ (item) => setEmailState(item.target.value)}
+                                placeholder="Type your email"
+                            />
+                            <button type="submit" className={`${styles.submitButton} ${!loading ? undefined : styles.loading}`}>
+                                {!loading ? "Remove" : "Loading"}
+                            </button>
+                        </>
+                    )}
                 </form>
             </div>
         </>
@@ -41,13 +59,16 @@ export default function Unsub() {
 }
 
 
-function handleSubmit (e, emailRef) {
+function handleSubmit (e, emailState, setLoading, setDone) {
     e.preventDefault();
 
     axios.post('/api/removeNewsletter', {
-        email: emailRef.current.value,
+        email: emailState,
     })
     .then((response) => {
         console.log(response);
+        setLoading(false);
+        setDone(true);
+        emailState = '';
     })
 }

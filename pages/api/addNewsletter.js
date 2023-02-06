@@ -41,6 +41,29 @@ export default async function addNewsletter(req, res) {
                 ],
             });
 
+        // Send welcome email
+
+        const sendEmail = await mailjet
+        .post("send", {'version': 'v3.1'})
+        .request({
+            Messages: [
+                {
+                    From: {
+                        Email: "news@francescobarbieri.blog",
+                        Name: "Francesco Barbieri's Blog"
+                    },
+                    To: [
+                        {
+                            Email: req.body.email,
+                            Name: "Dear Reader"
+                        },
+                    ],
+                    TemplateID: 4561017,
+                    Subject: "Welcome"
+                }
+            ]
+        })
+
         res.status(200).end(String(addToList));
     } else {
         res.status(500).end("catastrofe");
