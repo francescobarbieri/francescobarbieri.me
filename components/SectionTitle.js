@@ -1,5 +1,4 @@
 import styles from "../styles/SectionTitle.module.css";
-import { robotoSlab } from "./fonts";
 
 // icon = 'contacts' | 'latest' | 'newsletter' | 'about' | 'reading';
 
@@ -7,7 +6,7 @@ const SectionTitle = ({ title, icon }) => {
     return (
         <div className={styles.sectionTitle}>
             {printIcon(icon)}
-            <h2 className={robotoSlab.className}>{title}</h2>
+            <h2>{title}</h2>
         </div>
     );
 };
