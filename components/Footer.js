@@ -1,6 +1,5 @@
 import Link from "next/link";
 import styles from "../styles/Footer.module.css";
-import { robotoSlab } from "../components/fonts";
 import SectionTitle from "./SectionTitle";
 
 const Footer = () => {

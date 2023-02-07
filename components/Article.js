@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styles from "../styles/Article.module.css";
 import Link from "next/link";
-import { robotoSlab } from "../components/fonts";
 import format from "date-fns/format";
 
 const Article = ({ articleData, style }) => {
@@ -28,10 +27,7 @@ const Article = ({ articleData, style }) => {
                         className={styles.titleLink}
                     >
                         <h3
-                            className={[
-                                styles.title,
-                                robotoSlab.className,
-                            ].join(" ")}
+                            className={styles.title}
                         >
                             {articleData.title}
                         </h3>

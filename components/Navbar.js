@@ -1,5 +1,4 @@
 import styles from "../styles/Navbar.module.css";
-import { robotoSlab } from "../components/fonts";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
@@ -27,7 +26,7 @@ const Navbar = () => {
     return (
         <header className={styles.header}>
             <div className={styles.navHeader}>
-                <h1 className={[robotoSlab.className, styles.logo].join(" ")}>
+                <h1 className={styles.logo}>
                     Francesco Barbieri
                 </h1>
                 <p className={styles.slogan}>
