@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import { sourceSans } from "../components/fonts";
 import { ThemeProvider } from "next-themes";
 import Head from "next/head";
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App({ Component, pageProps }) {
     return (
@@ -11,7 +12,7 @@ export default function App({ Component, pageProps }) {
                 <link
                     rel="preconnect"
                     href="https://fonts.gstatic.com"
-                    crossorigin
+                    crossOrigin
                 />
                 <link
                     href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap"
@@ -21,6 +22,7 @@ export default function App({ Component, pageProps }) {
             <main className={sourceSans.className}>
                 <ThemeProvider>
                     <Component {...pageProps} />
+                    <Analytics />
                 </ThemeProvider>
             </main>
         </>
