@@ -9,7 +9,7 @@ Hi everyone!
 
 Welcome to my blog. This is my first post and honestly I don’t know what this new project will become.
 
-I’m writing this right after I finished developing this website, so I opened my Notion app to start writing and let the words flow out of my mind. However, after some time had passed, I was only coming up with boring ideas for my first post. I even questioned myself whether blogging was still a good idea, as I tend to change my mind easily on many things. So after I pondered for a while, a light bulb went on in my head. I could write why I’m struggling and why writing posts is difficult.
+I wrote this right after I finished developing this website, so I opened my Notion app to start writing and let the words flow out of my mind. However, after some time had passed, I was only coming up with boring ideas for my first post. I even questioned myself whether blogging was still a good idea, as I tend to change my mind easily on many things. So after I pondered for a while, a light bulb went on in my head. I could write why I’m struggling and why writing posts is difficult.
 
 ### Why is it difficult?
 
