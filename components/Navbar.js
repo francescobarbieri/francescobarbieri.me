@@ -30,7 +30,7 @@ const Navbar = () => {
                     Francesco Barbieri
                 </h1>
                 <p className={styles.slogan}>
-                    Tech, finance, actuality and much more
+                    Tech, finance, current events and much more
                 </p>
             </div>
             <nav className={styles.navRoutes}>

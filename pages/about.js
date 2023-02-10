@@ -116,7 +116,7 @@ export default function About() {
                                 <br />
                                 <br />
                                 In this blog I'm going to publish tech, coding,
-                                finance, investing and actuality posts.
+                                finance, investing and current events posts.
                                 <br />
                                 <br />
                                 If you have any questions, feel free to reach
