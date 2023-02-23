@@ -35,7 +35,7 @@
 
 .aboutText {
     max-width: 85ch;
-    color: var(--second-text);
+    color: var(--main-text);
     font-size: 1.16rem;
 }
 

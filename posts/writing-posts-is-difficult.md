@@ -1,6 +1,6 @@
 ---
 title: 'Writing posts is difficult'
-date: '2023-03-09'
+date: '2023-02-09'
 tag: 'Opinions'
 preview: 'Writing posts is difficult. Writing good posts even more. But is this effort wasted? It think it depends on you.'
 ---
