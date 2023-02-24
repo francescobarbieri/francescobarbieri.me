@@ -25,8 +25,8 @@ export default async function addNewsletter(req, res) {
         // Add user to contacts
         const addUser = await mailchimp.lists.setListMember(
             "f2a56fb6ab",
-            crypto.createHash("md5").update(req.body.email.toLowerCase()).digest("hex"),
-            { email_address: req.body.email, status_if_new: "subscribed"}
+            crypto.createHash("md5").update(req.body.email).digest("hex"),
+            { email_address: req.body.email, status_if_new: "subscribed", status: "subscribed"}
         );
 
         console.log(addUser)
@@ -35,8 +35,8 @@ export default async function addNewsletter(req, res) {
 
         // Send welcome email
 
-        res.status(200);
+        res.status(200).json({ success: true });
     } else {
-        res.status(500).end("catastrofe");
+        res.status(500).json({ success: false });
     }
 }
