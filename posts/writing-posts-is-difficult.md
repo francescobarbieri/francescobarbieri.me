@@ -2,7 +2,7 @@
 title: 'Writing posts is difficult'
 date: '2023-02-09'
 tag: 'Opinions'
-preview: 'Writing posts is difficult. Writing good posts even more. But is this effort wasted? It think it depends on you.'
+preview: 'Writing posts is difficult. Writing good posts even more. But is this effort wasted? I think it depends on you.'
 ---
 
 Hi everyone!
