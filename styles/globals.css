@@ -10,22 +10,26 @@
 
   --newsletter-bg: #212932;
   --newsletter-text: #e7e8eb;
+  --input-bg: #fefefe;
+  --pagination-border: rgba(0, 0, 0, 0.23);
 
   --footer-text: rgba(0,0,0, .66);
 }
 
 [data-theme='dark'] {
-  --background: #1c1c1c;
-  --main-text: rgba(256,256,256, 0.87);
-  --second-text: rgba(256,256,256, 0.66);
+  --background: #2d2d2d;
+  --main-text: #e7e9eb;
+  --second-text: #ACB3B9;
 
-  --article-border: #4c4c4c;
+  --article-border: hsl(210,4.5%,30.5%);;
   --tag-text: rgb(156, 195, 219);
   --tag-bg: rgb(62, 74, 82);
-  --date-text: #7D848D;
+  --date-text: #8e96a4;
 
   --newsletter-bg: #dadee0;
   --newsletter-text: rgba(0,0,0, .87);
+  --input-bg: #000000;
+  --pagination-border: #9b9b9b;
 
   --footer-text: #7D848D;
 }
@@ -93,6 +97,13 @@ section {
 
 .svg-icon {
   fill: var(--main-text);
+}
+
+/* MUI pagination Item */
+
+.MuiPaginationItem-root {
+  color: var(--main-text);
+  border-color: var(--pagination-border);
 }
 
 @media screen and (min-width: 640px) {

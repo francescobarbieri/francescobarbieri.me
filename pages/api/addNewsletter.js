@@ -28,9 +28,7 @@ export default async function addNewsletter(req, res) {
             crypto.createHash("md5").update(req.body.email).digest("hex"),
             { email_address: req.body.email, status_if_new: "subscribed", status: "subscribed"}
         );
-
-        console.log(addUser)
-
+        
         // Add user to contact list
 
         // Send welcome email

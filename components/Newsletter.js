@@ -65,6 +65,12 @@ const Newsletter = () => {
                                     <path d="m1 6 8 5 8-5V4L9 9 1 4c0-1.1.9-2 2-2h12c1.09 0 2 .91 2 2v10c0 1.09-.91 2-2 2H3c-1.09 0-2-.91-2-2V6Z"></path>
                                 </svg>
                             </div>
+                            <ReCAPTCHA
+                                ref={recaptchaRef}
+                                size="invisible"
+                                sitekey="6Lfpo_QjAAAAAON2uiE5fryrz_dqmr0IR26DwJeP"
+                                // test sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                            />
                             <button
                                 type="submit"
                                 className={`${styles.submitButton} ${
@@ -75,12 +81,6 @@ const Newsletter = () => {
                             </button>
                         </>
                     )}
-                    <ReCAPTCHA
-                        ref={recaptchaRef}
-                        size="invisible"
-                        sitekey="6Lfpo_QjAAAAAON2uiE5fryrz_dqmr0IR26DwJeP"
-                        // test sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-                    />
                 </form>
                 <svg
                     className={[styles.image, "svg-icon"].join(" ")}

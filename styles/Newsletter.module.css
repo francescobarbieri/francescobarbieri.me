@@ -13,7 +13,9 @@
 
 .form {
     display: flex;
-    gap: 1.625rem;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 34rem;
 }
 
 .emailInput {
@@ -22,6 +24,7 @@
     font-size: 1rem;
     border-radius: 4px;
     border: 1px solid rgba(0, 0, 0, .33);
+    background-color: var(--input-bg);
 }
 
 .inputContainer {
