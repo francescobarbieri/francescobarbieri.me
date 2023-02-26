@@ -16,7 +16,7 @@
 }
 
 [data-theme='dark'] {
-  --background: #2d2d2d;
+  --background: #181818;
   --main-text: #e7e9eb;
   --second-text: #ACB3B9;
 
@@ -27,7 +27,7 @@
 
   --newsletter-bg: #dadee0;
   --newsletter-text: rgba(0,0,0, .87);
-  --input-bg: #000000;
+  --input-bg: #111111;
 
   --footer-text: #7D848D;
 }

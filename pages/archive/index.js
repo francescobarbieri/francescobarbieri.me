@@ -8,8 +8,8 @@ import SectionTitle from "../../components/SectionTitle";
 import ArticlesCollection from "../../components/ArticlesCollection";
 import SelectTag from "../../components/SelectTag";
 import { Pagination } from "@mui/material";
-import { getSortedPostsData } from "../../components/posts";
-import { createTheme } from "@mui/system";
+import { getSortedPostsData } from "../../components/posts"; 
+import { makeStyles } from "@mui/styles";
 
 export default function Home(props) {
 
@@ -22,6 +22,15 @@ export default function Home(props) {
     });
 
     const [page, setPage] = useState(1);
+
+    const useStyle = makeStyles(() => ({
+        root: {
+            '& .MuiPaginationItem-root': {
+                color: "#9b9b9b",
+            }
+        }
+    }));
+    const classes = useStyle();
 
     function pageChange(event, value) {
         setPage(value);
@@ -99,6 +108,7 @@ export default function Home(props) {
                             variant="outlined"
                             shape="rounded"
                             color="primary"
+                            classes={{ root: classes.root }}
                         />
                     </section>
                     <Newsletter />
