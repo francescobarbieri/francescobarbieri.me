@@ -9,7 +9,8 @@ import ArticlesCollection from "../../components/ArticlesCollection";
 import SelectTag from "../../components/SelectTag";
 import { Pagination } from "@mui/material";
 import { getSortedPostsData } from "../../components/posts"; 
-import { makeStyles } from "@mui/styles";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useTheme } from "next-themes";
 
 export default function Home(props) {
 
@@ -22,15 +23,13 @@ export default function Home(props) {
     });
 
     const [page, setPage] = useState(1);
+    const { theme, setTheme } = useTheme()
 
-    const useStyle = makeStyles(() => ({
-        root: {
-            '& .MuiPaginationItem-root': {
-                color: "#9b9b9b",
-            }
+    const darkTheme = createTheme({
+        palette: {
+            mode: theme == 'dark' ? "dark" : "light",
         }
-    }));
-    const classes = useStyle();
+    });
 
     function pageChange(event, value) {
         setPage(value);
@@ -94,22 +93,23 @@ export default function Home(props) {
                                 )}
                         />
                         <br />
-                        <Pagination
-                            count={Math.ceil(
-                                allPostData.filter((item) => {
-                                    if (currentTag == "All") return true;
-                                    else if (currentTag == item.tag)
-                                        return true;
-                                    else return false;
-                                }).length / 9
-                            )}
-                            page={page}
-                            onChange={pageChange}
-                            variant="outlined"
-                            shape="rounded"
-                            color="primary"
-                            classes={{ root: classes.root }}
-                        />
+                        <ThemeProvider theme={darkTheme}>
+                            <Pagination
+                                count={Math.ceil(
+                                    allPostData.filter((item) => {
+                                        if (currentTag == "All") return true;
+                                        else if (currentTag == item.tag)
+                                            return true;
+                                        else return false;
+                                    }).length / 9
+                                )}
+                                page={page}
+                                onChange={pageChange}
+                                variant="outlined"
+                                shape="rounded"
+                                color="primary"
+                            />
+                        </ThemeProvider>
                     </section>
                     <Newsletter />
                     <Footer />

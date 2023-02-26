@@ -14,7 +14,6 @@
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.5",
-    "@mui/styles": "^5.11.9",
     "@next/font": "13.1.2",
     "@vercel/analytics": "^0.1.8",
     "axios": "^1.2.6",
@@ -28,7 +27,7 @@
     "next-themes": "^0.2.1",
     "node-mailjet": "^6.0.2",
     "prompt-sync": "^4.2.0",
-    "react": "18.2.0",
+    "react": "^18.2.0",
     "react-dom": "18.2.0",
     "react-google-recaptcha": "^2.1.0",
     "request-promise": "^4.2.6"
