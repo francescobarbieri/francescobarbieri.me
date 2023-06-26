@@ -5,8 +5,6 @@ tag: 'Tech'
 preview: 'Unraveling deepfakes: the alarming threat to truth, trust, and our digital reality.'
 ---
 
-### Abstract / Introduction
-
 Trust has become a first-order concept in AI, urging experts to call for measures ensuring it is "trustworthy". One of the dangers of AI are deepfakes, stunningly real videos that few would give a second glance to make sure they are real. They are perceived as a threat to democracies and online trust, through their potential to back sophisticated disinformation campaign. Moreover there are many social and psychological questions that deepfakes raised: how might deepfakes be used in social interaction? Are there strategies to debunking or countering deepfakes?
 
 There has been ample work done in computer science on automatic generation and detection of deepfakes, indeed the number of deepfakes is increasingly exponentially. But to date there have only been a handful of social scientist who have examined the social impact of this technology.
@@ -17,7 +15,7 @@ There has been ample work done in computer science on automatic generation and d
 
 Deepfakes, as we know them today, started with the [Video Rewrite program](http://chris.bregler.com/videorewrite/), created in 1997 by Christoph Bregler, Michele Covell and Malcolm Stanley. The program altered existing video footage to create new content of someone mouthing words they didn't speak in the original version. This program was the first system to automate facial reanimation completely. 
 
-As computer vision and artificial intelligence continued to advance, Ian Goodfellow's invention of [Generative Adversarial Networks](https://arxiv.org/abs/1406.2661) (GAN) in 2014 allowed the generation of much more realist fake  videos. GANs consists of two neural networks that compete to produce and discern high quality faked images. One is the “generator”, which creates images that loo like an original image, and the other is the “discriminator”, which tries to figure out if an image is fake or authentic. A feedback loop is generated between the two so that, as the generator learns, it gets better at fooling the discriminator by creating more realistic fakes and, as the discriminator learns, it finds more sophisticated ways of identifying the fakes.
+As computer vision and artificial intelligence continued to advance, Ian Goodfellow's invention of [Generative Adversarial Networks](https://arxiv.org/abs/1406.2661) (GAN) in 2014 allowed the generation of much more realistic fake  videos. GANs consists of two neural networks that compete to produce and discern high quality faked images. One is the “generator”, which creates images that looks like an original image, and the other is the “discriminator”, which tries to figure out if an image is fake or authentic. A feedback loop is generated between the two so that, as the generator learns, it gets better at fooling the discriminator by creating more realistic fakes and, as the discriminator learns, it finds more sophisticated ways of identifying the fakes.
 
 This is the framework that generated many famous deepfakes, such as the [Obama video](https://www.youtube.com/watch?v=cQ54GDm1eL0&ab_channel=BuzzFeedVideo) which hits the headlines in 2018, or the more recent image of Pope Francis wearing a Balenciaga down jacked.
 
