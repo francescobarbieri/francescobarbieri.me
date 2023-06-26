@@ -12,12 +12,12 @@ const Article = ({ articleData, style }) => {
             <Link
                 href={"/archive/" + articleData.id}>
                 <div className={styles.articleImageWrapper}>
-                    <img 
-                        src={"/articlesImg/" + articleData.id + "/cover.webp" }
-                        className={styles.articleImage}
-                        alt={articleData.title + " cover."}
-                    ></img>
-
+                <Image
+                    src={"/articlesImg/" + articleData.id + "/cover.webp" }
+                    fill={true}
+                    className={styles.articleImage}
+                    alt={articleData.title + " cover."}
+                />
                 </div>
             </Link>
             <div className={styles.articleContent}>
