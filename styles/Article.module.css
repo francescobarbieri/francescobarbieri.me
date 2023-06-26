@@ -6,7 +6,6 @@
 }
 
 .articleContent {
-    height: 100%;
     display: flex;
     padding: 1.625rem;
     flex-direction: column;

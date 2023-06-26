@@ -7,7 +7,7 @@ preview: 'Unraveling deepfakes: the alarming threat to truth, trust, and our dig
 
 ### Abstract / Introduction
 
-Trust has become a first-order concept in AI, urging experts to call for measures ensuring AI is "trustworthy". One of the dangers of AI are deepfakes, stunningly real videos that few would give a second glance to make sure they are real. They are perceived as a threat to democracies and online trust, through their potential to back sophisticated disinformation campaign. Moreover there are many social and psychological questions that deepfakes raised: how might deepfakes be used in social interaction? Are there strategies to debunking or countering deepfakes?
+Trust has become a first-order concept in AI, urging experts to call for measures ensuring it is "trustworthy". One of the dangers of AI are deepfakes, stunningly real videos that few would give a second glance to make sure they are real. They are perceived as a threat to democracies and online trust, through their potential to back sophisticated disinformation campaign. Moreover there are many social and psychological questions that deepfakes raised: how might deepfakes be used in social interaction? Are there strategies to debunking or countering deepfakes?
 
 There has been ample work done in computer science on automatic generation and detection of deepfakes, indeed the number of deepfakes is increasingly exponentially. But to date there have only been a handful of social scientist who have examined the social impact of this technology.
 
@@ -15,10 +15,11 @@ There has been ample work done in computer science on automatic generation and d
 
 ### New tech, old concept
 
-But deepfakes, as we know them today, started with the [Video Rewrite program](http://chris.bregler.com/videorewrite/), created in 1997 by Christoph Bregler, Michele Covell and Malcolm Stanley. The program altered existing video footage to create new content of someone mouthing words they didn't speak in the original version. This program was the first system to automate facial reanimation completely. 
+Deepfakes, as we know them today, started with the [Video Rewrite program](http://chris.bregler.com/videorewrite/), created in 1997 by Christoph Bregler, Michele Covell and Malcolm Stanley. The program altered existing video footage to create new content of someone mouthing words they didn't speak in the original version. This program was the first system to automate facial reanimation completely. 
 
 As computer vision and artificial intelligence continued to advance, Ian Goodfellow's invention of [Generative Adversarial Networks](https://arxiv.org/abs/1406.2661) (GAN) in 2014 allowed the generation of much more realist fake  videos. GANs consists of two neural networks that compete to produce and discern high quality faked images. One is the “generator”, which creates images that loo like an original image, and the other is the “discriminator”, which tries to figure out if an image is fake or authentic. A feedback loop is generated between the two so that, as the generator learns, it gets better at fooling the discriminator by creating more realistic fakes and, as the discriminator learns, it finds more sophisticated ways of identifying the fakes.
 
+This is the framework that generated many famous deepfakes, such as the [Obama video](https://www.youtube.com/watch?v=cQ54GDm1eL0&ab_channel=BuzzFeedVideo) which hits the headlines in 2018, or the more recent image of Pope Francis wearing a Balenciaga down jacked.
 
 ![Deepfake of Pope Francis wearing Balenciaga.](/articlesImg/the-social-impact-of-deepfakes/popeFrancisSwag.webp)
 
@@ -46,6 +47,6 @@ An important harm that it’s not considered in this article is the portrayal of
 
 The malicious use of deepfakes could be mitigated through technical and legal measures, such as ensuring they are properly labelled as non-authentic. The European Parliament has called in 2021 for a mandatory labelling and other rules to flag and remove illegal content. But such measures cannot respond to all risks of malicious deepfakes.
 
-Even though deepfake technology has the potential to undermine our trust in media or manipulate our perception of reality, it could also become a common tool as people use it to improve their day-to-day communication. Deepfake technology has the potential to change the multimedia, and content creation industries. This is due to the fact that through deepfakes, dialogues or expressions could synthetically be replaced, reducing the cost of production and saving time enabling multilingual dubbing, and enhancing voice synchronization in gaming and virtual reality applications.
+Even though deepfake technology has the potential to undermine our trust in media or manipulate our perception of reality, it could also become a common tool as people use it to improve their day-to-day communication and activities. Deepfake technology has the potential to change the multimedia, and content creation industries. This is due to the fact that through deepfakes, dialogues or expressions could synthetically be replaced, reducing the cost of production and saving time enabling multilingual dubbing, and enhancing voice synchronization in gaming and virtual reality applications.
 
-From what I’ve been written so far, what can be confidently affirmed is that there are many important psychological, social, and ethical issues that require innovative and careful empirical analyses of the social impact of deepfake technologies.
+From what I’ve been writing so far, what can be confidently affirmed is that there are many important psychological, social, and ethical issues that require innovative and careful empirical analyses of the social impact of deepfake technologies.
