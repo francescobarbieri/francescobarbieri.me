@@ -58,6 +58,10 @@
     max-height: 2.25rem;
 }
 
+.submitButton:hover {
+    background-color: #2e88e2;
+}
+
 .image {
     display: none;
 }

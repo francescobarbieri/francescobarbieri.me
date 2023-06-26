@@ -12,10 +12,10 @@ export default function App({ Component, pageProps }) {
                 <link
                     rel="preconnect"
                     href="https://fonts.gstatic.com"
-                    crossOrigin
+                    crossOrigin="true"
                 />
                 <link
-                    href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap"
+                    href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap"
                     rel="stylesheet"
                 />
             </Head>

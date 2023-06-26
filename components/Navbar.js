@@ -59,11 +59,7 @@ const Navbar = () => {
                         viewBox="0 0 18 18"
                     >
                         <path
-                            fill={
-                                theme === "light"
-                                    ? "rgb(83, 90, 96)"
-                                    : "rgb(196, 200, 204)"
-                            }
+                            className="svg-icon"
                             d="M3.34 14.66A8 8 0 1 0 14.66 3.34 8 8 0 0 0 3.34 14.66Zm9.9-1.42a6 6 0 0 1-8.48 0l8.48-8.48a6 6 0 0 1 0 8.48Z"
                         ></path>
                     </svg>

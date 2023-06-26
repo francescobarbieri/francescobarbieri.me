@@ -1,6 +1,5 @@
 .article {
     text-align: left;
-    padding: 1.625rem;
     border: 1px solid var(--article-border);
     border-radius: 4px;
     min-height: 19.5rem;
@@ -9,6 +8,7 @@
 .articleContent {
     height: 100%;
     display: flex;
+    padding: 1.625rem;
     flex-direction: column;
     justify-content: space-between;
 }
@@ -35,6 +35,11 @@
     text-transform: capitalize;
     width: 4.6875rem;
     text-align: center;
+}
+
+.tag:hover {
+    color: var(--tag-hover-text);
+    background-color: var(--tag-hover-bg);
 }
 
 .date {
@@ -74,6 +79,14 @@
     cursor: pointer;
     overflow: hidden;
     margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+}
+
+.button:hover > .buttonImg {
+    transform: translate(.3rem);
 }
 
 .buttonImg {
@@ -81,6 +94,7 @@
     margin-left: 0.25rem;
     height: 0.875rem;
     width: 0.875rem;
+    transition: transform .2s ease-in-out;
 }
 
 .preview {
@@ -91,6 +105,26 @@
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     color: var(--second-text);
+}
+
+.articleImageWrapper {
+    width: 100%;
+    height: 12.5rem;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: lightgray;
+    overflow: hidden;
+    position: relative;
+}
+
+.articleImage {
+    width: 100%;
+    object-fit: cover;
+    transition: transform .1s ease-in-out;
+}
+
+.articleImage:hover {
+    transform: scale(1.02);
 }
 
 @media screen and (min-width: 640px) {

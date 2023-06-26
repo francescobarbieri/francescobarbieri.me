@@ -19,7 +19,7 @@ export default function Home(props) {
                 />
                 <meta http-equiv="x-ua-compatible" content="ie=edge" />
                 <meta
-                    http-equip="content-language"
+                    httpEquip="content-language"
                     content="en-US"
                     data-react-helmet="true"
                 />

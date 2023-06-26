@@ -37,9 +37,15 @@
 .navLink {
     text-decoration: none;
     color: var(--main-text);
-    margin-left: .7rem;
-    margin-right: .7rem;
+    margin-left: .2rem;
+    margin-right: .2rem;
     font-size: 0.9375rem;
+    padding: 6px 12px;
+    border-radius: 1000px;
+}
+
+.navLink:hover {
+    background-color: var(--navbar-hover-bg);
 }
 
 .themeButton {
@@ -47,12 +53,13 @@
     border: none;
     cursor: pointer;
     padding: 0;
+    margin-left: .2rem;
 }
 
 .currentRoute {
-    background-color: #0071E3;
-    border-radius: 12px;
-    padding: .35rem .55rem .35rem .55rem;
+    background-color: #0071E3 !important;
+    padding: 6px 12px;
+    border-radius: 1000px;
     margin: 0 .15rem 0 .15rem;
     color: #fff;
 }

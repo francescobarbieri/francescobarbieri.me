@@ -1,11 +1,25 @@
-import Image from "next/image";
 import styles from "../styles/Article.module.css";
 import Link from "next/link";
 import format from "date-fns/format";
+import Image from "next/image";
 
 const Article = ({ articleData, style }) => {
+
+    console.log("/articlesImg/" + articleData.id + "/cover.webp");
+
     return (
         <article className={[styles.article, style].join(" ")}>
+            <Link
+                href={"/archive/" + articleData.id}>
+                <div className={styles.articleImageWrapper}>
+                    <img 
+                        src={"/articlesImg/" + articleData.id + "/cover.webp" }
+                        className={styles.articleImage}
+                        alt={articleData.title + " cover."}
+                    ></img>
+
+                </div>
+            </Link>
             <div className={styles.articleContent}>
                 <div>
                     <div className={styles.articleHeader}>
@@ -27,6 +41,7 @@ const Article = ({ articleData, style }) => {
                         className={styles.titleLink}
                     >
                         <h3
+                            title={articleData.title}
                             className={styles.title}
                         >
                             {articleData.title}
@@ -40,7 +55,7 @@ const Article = ({ articleData, style }) => {
                     aria-label={articleData.title}
                 >
                     <button className={styles.button}>
-                        Read more
+                        <div>Read more</div>
                         <svg
                             className={styles.buttonImg}
                             aria-hidden="true"

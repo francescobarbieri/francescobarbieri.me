@@ -4,6 +4,7 @@ import Footer from "../../components/Footer";
 import styles from "../../styles/Post.module.css";
 import Link from "next/link";
 import format from "date-fns/format";
+import Image from "next/image";
 import { getAllPostIds, getPostData } from "../../components/posts";
 import Newsletter from "../../components/Newsletter";
 
@@ -39,9 +40,17 @@ const Post = ({ postData }) => {
             <center>
                 <div className="wrapper">
                     <Navbar />
-                    <section>
+                    <section className={styles.postSection}>
                         <div className={styles.postGrid}>
                             <div className={styles.header}>
+                                <div className={styles.postCoverWrapper}>
+                                <Image
+                                        src={"/articlesImg/" + postData.id + "/cover.webp" }
+                                        fill={true}
+                                        className={styles.postCover}
+                                        alt={postData.title + " cover."}
+                                    />
+                                </div>
                                 <div className={styles.headerContent}>
                                     <div className={styles.articleHeader}>
                                         <Link

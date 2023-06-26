@@ -28,13 +28,13 @@
 
 .bookDescr {
     margin-top: .5rem;
-    max-width: 85ch;
+    max-width: 84ch;
     color: var(--second-text);
     font-size: 1.16rem;
 }
 
 .aboutText {
-    max-width: 85ch;
+    max-width: 84ch;
     color: var(--main-text);
     font-size: 1.16rem;
 }
@@ -42,4 +42,28 @@
 .subsection {
     margin-top: 2rem;
     margin-bottom: 1rem;
+}
+
+.quoteContainer {
+    width: 100%;
+    max-width: 84ch;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.quoteText {
+    margin-top: 1rem;
+    font-weight: 400;
+    font-size: 1.5625rem; 
+    max-width: 28ch;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-family: 'Roboto Slab', serif;
+}
+
+.quoteImage {
+    width: 100%;
+    aspect-ratio: 1/1;
+    max-width: 23rem;
 }
