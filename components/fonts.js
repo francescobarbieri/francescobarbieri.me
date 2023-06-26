@@ -1,4 +1,4 @@
-import { Roboto_Slab, Source_Sans_Pro } from "@next/font/google";
+import { Roboto_Slab, Source_Sans_Pro } from "next/font/google";
 
 export const robotoSlab = Roboto_Slab({ subsets: ["latin"] });
 
