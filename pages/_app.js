@@ -18,6 +18,8 @@ export default function App({ Component, pageProps }) {
                     href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap"
                     rel="stylesheet"
                 />
+
+                <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
             </Head>
             <main className={sourceSans.className}>
                 <ThemeProvider>

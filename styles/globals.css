@@ -11,6 +11,7 @@
   --tag-hover-text: #0071E3;
   --tag-hover-bg: #c5deec;
   --date-text: rgba(0, 0, 0, .45);
+  --post-link-color: blue;
 
   --newsletter-bg: #212932;
   --newsletter-text: #e7e8eb;
@@ -32,6 +33,7 @@
   --tag-hover-text: #fff;
   --tag-hover-bg: rgb(62, 74, 82);
   --date-text: #8e96a4;
+  --post-link-color: rgb(26, 151, 253);
 
   --newsletter-bg: #dadee0;
   --newsletter-text: rgba(0,0,0, .87);

@@ -51,7 +51,8 @@ const Post = ({ postData }) => {
                                         alt={postData.title + " cover."}
                                     />
                                 </div>
-                                <div className={styles.headerContent}>
+                            </div>
+                            <div className={styles.headerContent}>
                                     <div className={styles.articleHeader}>
                                         <Link
                                             href={
@@ -74,7 +75,6 @@ const Post = ({ postData }) => {
                                         {postData.title}
                                     </h2>
                                 </div>
-                            </div>
                             <div
                                 className={styles.body}
                                 dangerouslySetInnerHTML={{
