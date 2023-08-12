@@ -1,4 +1,4 @@
-# francescobarbieri.me
+# francescobarbieri.blog
 
 ## Details
 
